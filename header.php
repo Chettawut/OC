@@ -4,7 +4,7 @@ include_once('config.php');
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="<?php echo PATH; ?>">OC Money Group</a>
+        <a class="navbar-brand " href="<?php echo PATH; ?>">OC Money Group</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -18,10 +18,6 @@ include_once('config.php');
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo PATH; ?>">ติดต่อเรา</a>
-                </li>
-                <li class="nav-item">
-                    <!-- <a class="nav-link" href="<?php echo PATH; ?>/backend">Login</a> -->
-                    <a class="nav-link" data-toggle="modal" data-target="#exampleModalCenter">Login</a>
                 </li>
                 <!-- <li class="nav-item">
             <a class="nav-link" href="post.html">Sample Post</a>
@@ -42,7 +38,23 @@ include_once('config.php');
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
 
-                    
+                    <body>
+                        <div class="login">
+
+                            <h1> <img src="img/LOGO LOGIN.png" width="130px;"></h1>
+                            <form action="login_result.php" method="post">
+                                <label for="username">
+                                    <i class="fas fa-user"></i>
+                                </label>
+                                <input type="text" name="username" placeholder="Username" id="username" required>
+                                <label for="password">
+                                    <i class="fas fa-lock"></i>
+                                </label>
+                                <input type="password" name="password" placeholder="Password" id="password" required>
+                                <input type="submit" value="Login">
+                            </form>
+                        </div>
+                    </body>
                     <!-- <h2>Pokémon Database</h2>
                         <span class="subheading">News & Updates</span> -->
                 </div>

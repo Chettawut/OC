@@ -35,10 +35,10 @@
     }
 
     .login {
-        width: 380px;
+        width: 385px;
         background-color: #ffffff;
         box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-        margin: 100px auto;
+        margin: 10px auto;
     }
 
     .login h1 {
@@ -46,7 +46,7 @@
         color: #5b6574;
         font-size: 26px;
         padding: 15px 0 10px 0;
-        border-bottom: 1px solid #5a2776;
+        border-bottom: 1px solid #8806ce;
     }
 
     .login form {
@@ -62,7 +62,7 @@
         align-items: center;
         width: 50px;
         height: 50px;
-        background-color: #5a2776;
+        background-color: #8806ce;
         color: #ffffff;
     }
 
@@ -79,7 +79,7 @@
         width: 100%;
         padding: 15px;
         margin-top: 20px;
-        background-color: #5a2776;
+        background-color: #8806ce;
         border: 0;
         cursor: pointer;
         font-weight: bold;
