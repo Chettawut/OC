@@ -46,14 +46,14 @@
         color: #5b6574;
         font-size: 26px;
         padding: 15px 0 10px 0;
-        border-bottom: 1px solid #bf7fff;
+        border-bottom: 1px solid #5a2776;
     }
 
     .login form {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        padding-top: 20px;
+        padding-top: 40px;
     }
 
     .login form label {
@@ -62,7 +62,7 @@
         align-items: center;
         width: 50px;
         height: 50px;
-        background-color: #bf7fff;
+        background-color: #5a2776;
         color: #ffffff;
     }
 
@@ -79,7 +79,7 @@
         width: 100%;
         padding: 15px;
         margin-top: 20px;
-        background-color: #bf7fff;
+        background-color: #5a2776;
         border: 0;
         cursor: pointer;
         font-weight: bold;
@@ -193,7 +193,7 @@
             <div class="modal-css">
                 <div class="login">
 
-                    <h1> <img src="img/logo.png" width="90px;"></h1>
+                    <h1> <img src="img/LOGO LOGIN.png" width="130px;"></h1>
                     <form action="login_result.php" method="post">
                         <label for="username">
                             <i class="fas fa-user"></i>
@@ -210,7 +210,6 @@
         </div>
     </div>
 
-    <hr>
 
     <?php include_once('footer.php'); ?>
 
