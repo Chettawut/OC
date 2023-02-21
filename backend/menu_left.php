@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?php echo PATH; ?>/backend/" class="brand-link">
-        <img src="<?php echo PATH; ?>/backend/img/logo_fb.png"  class="brand-image img-circle elevation-3"
+        <img src="<?php echo PATH; ?>/backend/img/logo KAE-01.jpg" class="brand-image img-circle elevation-3"
             style="background-color:white;width:45px;margin-top:1px;">
         <span class="brand-text font-weight-light">OC Money Group</span>
     </a>
@@ -18,14 +18,27 @@
                 <a href="#" class="d-block"><?php echo $_SESSION['firstname'].' '.$_SESSION['lastname'];?> </a>
             </div>
         </div>
-        <nav class="mt-2" >
+        
+
+        <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-header">
+                            <input type="search" id="form1" class="form-control " placeholder="ระบุรหัส / ชื่อลูกแชร์" />
+                </li>
                 <li class="nav-header">Systems</li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/backend/customer" class="nav-link">
                         <i class="nav-icon fas fa-clipboard"></i>
                         <p>
-                        เคสลูกค้า (Customer)
+                            ระบบขาย
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/backend/user" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            ระบบผ่อนเงิน
                         </p>
                     </a>
                 </li>
@@ -34,18 +47,11 @@
                     <a href="<?php echo PATH; ?>/backend/inventory" class="nav-link">
                         <i class="nav-icon fa fa-cube"></i>
                         <p>
-                            จัดการสินค้า(Inventory)
+                            ระบบสต๊อก
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/backend/user" class="nav-link">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>
-                        จัดการผู้ใช้งาน (User)
-                        </p>
-                    </a>
-                </li>
+
             </ul>
         </nav>
 

@@ -4,3 +4,4 @@ define('PATH', ROOT == $_SERVER['DOCUMENT_ROOT']
     ?'' :substr(ROOT,strlen($_SERVER['DOCUMENT_ROOT']))
 );
 ?>
+
