@@ -42,75 +42,62 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard v1</li>
-                            </ol>
+                            <h1 class="m-0">ภาพรวม</h1>
                         </div>
                     </div>
                 </div>
             </div>
             <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-6 col-6">
-                            <div class="small-box bg-info">
-                                <div class="inner">
-                                    <h3 id="spancus_thismonth"></h3>
+            <div class="row">
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>720,000</h3>
 
-                                    <p>เคชลูกค้าเดือนปัจจุบัน</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-add"></i>
+                <p>รายรับทั้งหมด</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-coins"></i>
+              </div>
+              <a href="#" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          
+          
 
-                                </div>
-                                <span class="small-box-footer">&nbsp;</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-6">
-                            <div class="small-box bg-success">
-                                <div class="inner">
-                                    <h3 id="spanclosedcus"></h3>
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>- 500,000</h3>
 
-                                    <p>เคชลูกค้าที่ปิดแล้ว</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-checkmark"></i>
-                                </div>
-                                <span class="small-box-footer">&nbsp;</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-6">
-                            <div class="small-box bg-warning">
-                                <div class="inner">
-                                    <h3 id="spanpercenclosed"></h3>
+                <p>รายจ่ายทั้งหมด</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-minus"></i>
+              </div>
+              <a href="#" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>+ 220,000<sup style="font-size: 20px"></sup></h3>
 
-                                    <p>สัดส่วนเคชลูกค้าที่ปิดสำเร็จ</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <span class="small-box-footer">&nbsp;</span>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-6">
-                            <div class="small-box bg-danger">
-                                <div class="inner">
-                                    <h3 id="spancountcus"></h3>
-
-                                    <p>เคชลูกค้าทั้งหมด</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-person"></i>
-                                </div>
-                                <span class="small-box-footer">&nbsp;</span>
-                            </div>
-                        </div>
-                    </div>
-                    
+                <p>สรุปยอด</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-plus"></i>
+              </div>
+              <a href="#" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
                 </div>
             </section>
         </div>
