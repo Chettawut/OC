@@ -1,7 +1,6 @@
 <script type="text/javascript">
 $(function() {
 
-    $("#sideStore").show()
 
     $.ajax({
         type: "POST",
@@ -16,13 +15,13 @@ $(function() {
                     type = 'Finish Goods'
                 else if (result.type[count] == 'MAT')
                     type = 'Material'
-                else
-                type = ''
+                else if (result.type[count] == 'SFG')
+                    type = 'Semi Finish Goods'
 
                 $('#tableStock').append(
                     '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
                     .stcode[
-                        count] + '" data-whatever="' + result.code[
+                        count] + '" data-whatever="' + result.stcode[
                         count] + '">.<td>' + result.stcode[count] + '</td><td>' +
                     result.stname1[count] + '</td><td style="text-align:right">' +
                     type + '</td><td style="text-align:right">' +
@@ -67,12 +66,12 @@ $('#modal_edit').on('show.bs.modal', function(event) {
 
 
 
-            modal.find('.modal-body #code').val(result.code);
             modal.find('.modal-body #stcode').val(result.stcode);
             modal.find('.modal-body #stname1').val(result.stname1);
             modal.find('.modal-body #unit').val(result.unit);
             modal.find('.modal-body #stmin1').val(result.stmin1);
             modal.find('.modal-body #stmin2').val(result.stmin2);
+            modal.find('.modal-body #stmax').val(result.stmax);            
             modal.find('.modal-body #type').val(result.type);
             modal.find('.modal-body #status').val(result.status);
 
@@ -81,9 +80,6 @@ $('#modal_edit').on('show.bs.modal', function(event) {
     });
 });
 
-$('#modelEdit').on('hidden.bs.modal', function() {
-    $("#frmEditInventory *").prop('disabled', true);
-});
 
 $("#btnRefresh").click(function() {
     window.location.reload();

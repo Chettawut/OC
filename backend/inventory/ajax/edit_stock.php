@@ -1,19 +1,13 @@
 <?php
 	header('Content-Type: application/json');
-	include('../../../conn.php');
+	include('../../conn.php');
     
     date_default_timezone_set("Asia/Bangkok");
-    
-    
-	// $strSQL = "UPDATE user SET ";
-    // $strSQL .= "username='".$_POST["editusername"]."',password='".$_POST["editpassword"]."',firstname='".$_POST["editfirstname"]."',lastname='".$_POST["editlastname"]."',tel='".$_POST["edittel"]."' ";
-    // $strSQL .= ",email='".$_POST["editemail"]."',type='".$_POST["edittype"]."',bankcode='".$_POST["editbankcode"]."',bankname='".$_POST["editbankname"]."',date='' ";
-    // $strSQL .= "WHERE username= '".$_POST["editusername"]."' ";
 
     $strSQL = "UPDATE stock SET ";
     $strSQL .= "stcode='".$_POST["stcode"]."',stname1='".$_POST["stname1"]."',unit='".$_POST["unit"]."',stmin1='".$_POST["stmin1"]."' ";
-    $strSQL .= ",stmin2='".$_POST["stmin2"]."',type='".$_POST["type"]."',status='".$_POST["status"]."',s_date='".date("Y-m-d")."',s_time='".date("H:i:s")."'";
-    $strSQL .= "WHERE code= '".$_POST["code"]."' ";
+    $strSQL .= ",stmin2='".$_POST["stmin2"]."',stmax='".$_POST["stmax"]."',type='".$_POST["type"]."',status='".$_POST["status"]."',s_date='".date("Y-m-d")."',s_time='".date("H:i:s")."'";
+    $strSQL .= "WHERE stcode= '".$_POST["stcode"]."' ";
 
     
 	$query = mysqli_query($conn,$strSQL);

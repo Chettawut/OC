@@ -39,10 +39,18 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/backend/supplier" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                        ข้อมูลเจ้าหนี้/ผู้ขาย
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="<?php echo PATH; ?>/backend/inventory" class="nav-link">
                         <i class="nav-icon fa fa-cube"></i>
                         <p>
-                        ข้อลูลสินค้า
+                        ข้อมูลสินค้า
                         </p>
                     </a>
                 </li>
