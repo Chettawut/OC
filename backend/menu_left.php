@@ -24,15 +24,7 @@
 
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/backend/customer" class="nav-link">
-                        <i class="nav-icon fas fa-clipboard"></i>
-                        <p>
-                            
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/backend/user" class="nav-link">
-                        <i class="nav-icon fas fa-users"></i>
+                    <i class="nav-icon fas fa-clipboard"></i>
                         <p>
                         ข้อมูลลูกค้า
                         </p>
@@ -54,7 +46,46 @@
                         </p>
                     </a>
                 </li>
-
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/backend/unit" class="nav-link">
+                        <i class="nav-icon fa fa-cube"></i>
+                        <p>
+                        หน่วยพัสดุ
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/backend/type" class="nav-link">
+                        <i class="nav-icon fa fa-cube"></i>
+                        <p>
+                        ประเภทสินค้า
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/backend/brand" class="nav-link">
+                        <i class="nav-icon fa fa-cube"></i>
+                        <p>
+                        แบรนด์สินค้า
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/backend/color" class="nav-link">
+                        <i class="nav-icon fa fa-cube"></i>
+                        <p>
+                        สีสินค้า
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/backend/user" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                        ข้อมูลพนักงาน
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
 
