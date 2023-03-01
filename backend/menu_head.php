@@ -35,29 +35,28 @@
     <ul class="navbar-nav ml-auto center" >
         <li class="nav-item d-sm-inline-block">
             <a href="<?php echo PATH; ?>/backend/logout.php" class="nav-link">
-                <i class="nav-icon fas fa-globe"></i> ภาพรวม</a>
+                <i class="nav-icon fas fa-globe"> ภาพรวม </i></a>
         </li>
         <li class="nav-item d-sm-inline-block">
             <a href="<?php echo PATH; ?>/backend/logout.php" class="nav-link">
-                <i class="nav-icon fas  fa-share-alt"></i> ขายสินค้า</a>
+                <i class="nav-icon fas fa-cash-register"> ขายสินค้า </i></a>
         </li>
         <li class="nav-item d-sm-inline-block">
             <a href="<?php echo PATH; ?>/backend/logout.php" class="nav-link">
-                <i class="nav-icon fas  fa-share-alt"></i> ข้อมูลลูกค้า</a>
+                <i class="nav-icon fas fa-credit-card">&nbsp;ผ่อนสินค้า </i></a>
         </li>
         <li class="nav-item d-sm-inline-block">
             <a href="<?php echo PATH; ?>/backend/logout.php" class="nav-link">
-                <i class="nav-icon fas fa-chart-pie"></i> รายงาน</a>
+                <i class="nav-icon fas fas fa-user-plus"> เพิ่มสมาชิก </i></a>
         </li>
         <li class="nav-item d-sm-inline-block">
             <a href="<?php echo PATH; ?>/backend/logout.php" class="nav-link">
-                <i class="nav-icon fas fa-hand-holding-usd"></i> ลูกหนี้</a>
+                <i class="nav-icon fas fa-chart-pie"> รายงาน </i></a>
         </li>
-        
         &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
         <li class="nav-item d-sm-inline-block front-danger">
-            <a href="<?php echo PATH; ?>/backend/logout.php" class="nav-link">
-                <i class="nav-icon fas  fa-sign-in-alt"> </i> ออกจากระบบ
+            <a type="button"href="<?php echo PATH; ?>/backend/logout.php" class="nav-link">
+            <p style="color:red"><i class="nav-icon fas  fa-sign-in-alt"> ออกจากระบบ </i></p>
             </a>
         </li>
     </ul>

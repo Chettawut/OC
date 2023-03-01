@@ -24,23 +24,39 @@
 
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/backend/customer" class="nav-link">
-                    <i class="nav-icon fas fa-clipboard"></i>
+                    <i class="nav-icon fas fa-address-book"></i>
                         <p>
                         ข้อมูลลูกค้า
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/backend/supplier" class="nav-link">
+                    <a href="<?php echo PATH; ?>/backend/user" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
+                        <p>
+                        ข้อมูลพนักงาน
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/backend/supplier" class="nav-link">
+                        <i class="nav-icon 	fas fa-user-tie"></i>
                         <p>
                         ข้อมูลเจ้าหนี้/ผู้ขาย
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/backend/user" class="nav-link">
+                        <i class="nav-icon 	fas fa-comments-dollar"></i>
+                        <p>
+                        ข้อมูลลูกหนี้
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="<?php echo PATH; ?>/backend/inventory" class="nav-link">
-                        <i class="nav-icon fa fa-cube"></i>
+                        <i class="nav-icon fas fa-paste"></i>
                         <p>
                         ข้อมูลสินค้า
                         </p>
@@ -56,7 +72,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/backend/type" class="nav-link">
-                        <i class="nav-icon fa fa-cube"></i>
+                        <i class="nav-icon 	far fa-object-group"></i>
                         <p>
                         ประเภทสินค้า
                         </p>
@@ -64,7 +80,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/backend/brand" class="nav-link">
-                        <i class="nav-icon fa fa-cube"></i>
+                        <i class="nav-icon fas fa-star"></i>
                         <p>
                         แบรนด์สินค้า
                         </p>
@@ -72,17 +88,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/backend/color" class="nav-link">
-                        <i class="nav-icon fa fa-cube"></i>
+                        <i class="nav-icon 	fas fa-palette"></i>
                         <p>
                         สีสินค้า
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/backend/user" class="nav-link">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>
-                        ข้อมูลพนักงาน
                         </p>
                     </a>
                 </li>
