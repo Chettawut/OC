@@ -7,7 +7,7 @@ $(function() {
         //    data: $("#frmMain").serialize(),
         success: function(result) {
 
-            for (count = 0; count < result.typecode.length; count++) {
+            for (count = 0; count < result.bdcode.length; count++) {
 
                 var status = '';
                 if (result.status[count] == 'Y')
@@ -17,9 +17,9 @@ $(function() {
 
                 $('#tableBrand').append(
                     '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
-                    .typecode[
-                        count] + '" data-whatever="' + result.typecode[
-                        count] + '">.<td>' + result.typename[count] + '</td><td>' +
+                    .bdcode[
+                        count] + '" data-whatever="' + result.bdcode[
+                        count] + '">.<td>' + result.bdname[count] + '</td><td>' +
                     status + '</td></tr>');
             }
 

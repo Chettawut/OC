@@ -13,8 +13,22 @@
                     action="javascript:void(0);">
                     <div class="form-row">
                         <div class="col-md-6">
-                            <label class="col-form-label">ชื่อ Type </label>
-                            <input type="text" class="form-control" name="add_typename" id="add_typename" required>
+                            <label class="col-form-label">ชื่อแบรนด์สินค้า </label>
+                            <input type="text" class="form-control" name="add_bdname" id="add_bdname" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-form-label">ชื่อ Type </label>                            
+                            <select class="form-control" name="add_typename" id="add_typename" required>
+                                <?php 
+                                            
+                                        	$sql = "SELECT * FROM `type` where status = 'Y' ";
+                                            $query = mysqli_query($conn,$sql);
+                                        
+                                            while($row = $query->fetch_assoc()) {
+                                                echo '<option value="'.$row["typecode"].'">'.$row["typename"].'</option>';
+                                            }
+                                    ?>
+                            </select>
                         </div>
                     </div>
 

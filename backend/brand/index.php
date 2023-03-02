@@ -80,7 +80,8 @@
                             <table name="tableBrand" id="tableBrand" class="table table-bordered table-striped">
                                 <thead style="background-color:#D6EAF8;">
                                     <tr>
-                                        <th width="80%">ชื่อแบรนด์สินค้า</th>
+                                        <th width="40%">ชื่อแบรนด์สินค้า</th>
+                                        <th width="40%">ประเภทสินค้า</th>
                                         <th width="20%">สถานะการใช้งาน</th>
                                     </tr>
                                 </thead>
