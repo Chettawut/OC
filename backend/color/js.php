@@ -3,11 +3,11 @@ $(function() {
 
     $.ajax({
         type: "POST",
-        url: "ajax/get_brand.php",
+        url: "ajax/get_color.php",
         //    data: $("#frmMain").serialize(),
         success: function(result) {
 
-            for (count = 0; count < result.bdcode.length; count++) {
+            for (count = 0; count < result.clcode.length; count++) {
 
                 var status = '';
                 if (result.status[count] == 'Y')
@@ -15,15 +15,15 @@ $(function() {
                 else
                     status = 'ปิดใช้งาน'
                     
-                $('#tableBrand').append(
+                $('#tableColor').append(
                     '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
-                    .bdcode[
-                        count] + '" data-whatever="' + result.bdcode[
-                        count] + '"><td>' + result.bdname[count] + '</td><td>' + result.typename[count] + '</td><td>' +
+                    .clcode[
+                        count] + '" data-whatever="' + result.clcode[
+                        count] + '"><td>' + result.clname[count] + '</td><td>' + result.typename[count] + '</td><td>' +
                     status + '</td></tr>');
             }
 
-            var table = $('#tableBrand').DataTable({
+            var table = $('#tableColor').DataTable({
                 "dom": '<"pull-right"f>rt<"bottom"p><"clear">',
                 "ordering": false
             });
@@ -47,7 +47,7 @@ $('#modal_edit').on('show.bs.modal', function(event) {
 
     $.ajax({
         type: "POST",
-        url: "ajax/getsup_brand.php",
+        url: "ajax/getsup_color.php",
         data: "idcode=" + recipient,
         success: function(result) {
             modal.find('.modal-body #bdcode').val(result.bdcode);
@@ -63,13 +63,13 @@ $("#btnRefresh").click(function() {
     window.location.reload();
 });
 
-$("#frmAddBrand").submit(function(e) {
+$("#frmAddColor").submit(function(e) {
     e.preventDefault();
     
     $.ajax({
         type: "POST",
-        url: "ajax/add_brand.php",
-        data: $("#frmAddBrand").serialize() +
+        url: "ajax/add_color.php",
+        data: $("#frmAddColor").serialize() +
             "&id=" + '<?php echo $_SESSION['id'];?>',
         success: function(result) {
             if (result.status == 1) // Success
@@ -84,12 +84,12 @@ $("#frmAddBrand").submit(function(e) {
 
 });
 
-$("#frmEditBrand").submit(function() {
+$("#frmEditColor").submit(function() {
 
     $.ajax({
         type: "POST",
-        url: "ajax/edit_brand.php",
-        data: $("#frmEditBrand").serialize(),
+        url: "ajax/edit_color.php",
+        data: $("#frmEditColor").serialize(),
         success: function(result) {
 
             if (result.status == 1) // Success

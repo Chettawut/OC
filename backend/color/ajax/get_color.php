@@ -2,10 +2,10 @@
 	header('Content-Type: application/json');
     include('../../conn.php');
     date_default_timezone_set('Asia/Bangkok');
-	
-	$strSQL = "SELECT a.bdcode,a.bdname,b.typecode,b.typename,a.status FROM brand as a inner join type as b on (a.typecode=b.typecode)";
-	$strSQL .= " where a.bdcode = '".$_POST['idcode']."'";
-	$query = mysqli_query($conn,$strSQL);
+
+	$sql = "SELECT * FROM brand as a inner join type as b on (a.typecode=b.typecode)";
+	$query = mysqli_query($conn,$sql);
+
 	
 	$json_result=array(
 		"bdcode" => array(),
