@@ -50,8 +50,8 @@ $('#modal_edit').on('show.bs.modal', function(event) {
         url: "ajax/getsup_color.php",
         data: "idcode=" + recipient,
         success: function(result) {
-            modal.find('.modal-body #bdcode').val(result.bdcode);
-            modal.find('.modal-body #bdname').val(result.bdname);
+            modal.find('.modal-body #clcode').val(result.clcode);
+            modal.find('.modal-body #clname').val(result.clname);
             modal.find('.modal-body #typecode').val(result.typecode);
             modal.find('.modal-body #status').val(result.status);
 

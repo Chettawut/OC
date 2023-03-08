@@ -29,8 +29,8 @@ $(function() {
             });
 
             $(".dataTables_filter input[type='search']").attr({
-                size: 60,
-                maxlength: 60
+                size: 40,
+                maxlength: 40
             });
 
 

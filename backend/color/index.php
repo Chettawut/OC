@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>แบรนด์สินค้า (Brand)</title>
+    <title>สีสินค้า (Color)</title>
 
     <?php 
     include_once('css.php'); 
@@ -43,7 +43,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0"> <i class="nav-icon fas fa-edit"></i> แบรนด์สินค้า (Brand)</h1>
+                            <h1 class="m-0"> <i class="nav-icon fas fa-edit"></i>สีสินค้า (Color)</h1>
                         </div>
                         <div class="col-sm-6">
                         </div>
@@ -60,7 +60,7 @@
                                     <div class="btn-group" id="btnAdd" role="group" aria-label="Basic example">
                                         <button type="button" class="btn btn-success" data-toggle="modal"
                                             data-target="#modal_add"><i class="fa fa fa-tags" aria-hidden="true"></i>
-                                            เพิ่ม Brand</button>
+                                            เพิ่ม Color</button>
                                         <button type="button" id="btnRefresh" class="btn btn-primary"><i
                                                 class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
                                     </div>
@@ -77,10 +77,10 @@
                     <br>
                     <div class="row">
                         <div class="col-lg-12 col-12">
-                            <table name="tableBrand" id="tableBrand" class="table table-bordered table-striped">
+                            <table name="tableColor" id="tableColor" class="table table-bordered table-striped">
                                 <thead style="background-color:#D6EAF8;">
                                     <tr>
-                                        <th width="40%">ชื่อแบรนด์สินค้า</th>
+                                        <th width="40%">ชื่อสีสินค้า</th>
                                         <th width="40%">ประเภทสินค้า</th>
                                         <th width="20%">สถานะการใช้งาน</th>
                                     </tr>

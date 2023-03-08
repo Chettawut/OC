@@ -3,9 +3,9 @@
     include('../../conn.php');
     date_default_timezone_set('Asia/Bangkok');
     
-    $StrSQL = "INSERT INTO brand (`bdname`,`typecode`, `status`, s_date, s_time, s_user) ";
+    $StrSQL = "INSERT INTO color (`clname`,`typecode`, `status`, s_date, s_time, s_user) ";
     $StrSQL .= "VALUES (";
-    $StrSQL .= "'".$_POST["add_bdname"]."','".$_POST["add_typecode"]."','Y' ";
+    $StrSQL .= "'".$_POST["add_clname"]."','".$_POST["add_typecode"]."','Y' ";
     $StrSQL .= ",'".date("Y-m-d")."','".date("H:i:s")."','".$_POST["id"]."' ";    
     $StrSQL .= ")";
     $query = mysqli_query($conn,$StrSQL);
@@ -14,7 +14,7 @@
 
 
         if($query) {
-            echo json_encode(array('status' => '1','message'=> 'เพิ่มแบรนด์ '.$_POST["add_bdname"].' สำเร็จ'));
+            echo json_encode(array('status' => '1','message'=> 'เพิ่มสี '.$_POST["add_clname"].' สำเร็จ'));
         }
         else
         {

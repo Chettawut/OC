@@ -3,17 +3,17 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content w3-flat-turquoise">
             <div class="modal-header bg-gradient-secondary">
-                <h5 class="modal-title">แก้ไขประเภท</h5>
+                <h5 class="modal-title">แก้ไขสี</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form name="frmEditBrand" id="frmEditBrand" method="POST" style="padding:10px;" action="javascript:void(0);">
+            <form name="frmEditColor" id="frmEditColor" method="POST" style="padding:10px;" action="javascript:void(0);">
                 <div class="modal-body">
                     <div class="form-row">
                         <div class="col-md-6">
-                            <label class="col-form-label">ชื่อ แบรนด์ </label>
-                            <input type="text" class="form-control" name="bdname" id="bdname" required>
+                            <label class="col-form-label">ชื่อสี </label>
+                            <input type="text" class="form-control" name="clname" id="clname" required>
                         </div>
                         <div class="col-md-6">
                             <label class="col-form-label">ชื่อ Type </label>
@@ -45,12 +45,12 @@
 
 
                     <hr>
-                    <input type="hidden" id="bdcode" name="bdcode">
+                    <input type="hidden" id="clcode" name="clcode">
                 </div>
                 <div class="modal-footer">
                     <div class="col text-center">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                        <button type="submit" form="frmEditBrand" class="btn btn-primary">แก้ไข</button>
+                        <button type="submit" form="frmEditColor" class="btn btn-primary">แก้ไข</button>
                     </div>
                 </div>
             </form>

@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content w3-flat-turquoise">
             <div class="modal-header bg-gradient-secondary">
-                <h5 class="modal-title">Edit Inventory</h5>
+                <h5 class="modal-title">แก้ไขสินค้า</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -13,16 +13,16 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">ProductCode</label>
+                            <label for="recipient-name" class="col-form-label">รหัสสินค้า</label>
                             <input type="text" class="form-control" name="stcode" id="stcode" minlength="6"
-                                maxlength="9" required>
+                                maxlength="9" disabled>
                         </div>
                         <div class="form-group col-lg-6 col-12">
-                            <label class="col-form-label">ProductName</label>
+                            <label class="col-form-label">ชื่อสินค้า</label>
                             <input type="text" class="form-control" name="stname1" id="stname1" required>
                         </div>
                         <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">Unit</label>
+                            <label for="recipient-name" class="col-form-label">หน่วย</label>
                             <select class="form-control" name="unit" id="unit">
                                 <?php 
                                             
@@ -39,28 +39,45 @@
                     </div>
                     <div class="row">
                     <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">Min ขั้นต่ำ</label>
-                            <input type="number" class="form-control" name="stmin1" id="stmin1" required>
+                            <label for="recipient-name" class="col-form-label">ประเภทสินค้า</label>                            
+                            <select class="form-control" name="typecode" id="typecode">
+                                <?php 
+                                            
+                                        	$sql = "SELECT * FROM `type` where status = 'Y' ";
+                                            $query = mysqli_query($conn,$sql);
+                                        
+                                            while($row = $query->fetch_assoc()) {
+                                                echo '<option value="'.$row["typecode"].'">'.$row["typename"].'</option>';
+                                            }
+                                    ?>
+                            </select>
                         </div>
                         <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">Min ขีดแดง</label>
-                            <input type="number" class="form-control" name="stmin2" id="stmin2" required>
+                            <label for="recipient-name" class="col-form-label">แบรนด์สินค้า</label>                            
+                            <select class="form-control" name="bdcode" id="bdcode">
+                                <?php 
+                                            
+                                        	$sql = "SELECT * FROM `brand` where status = 'Y' ";
+                                            $query = mysqli_query($conn,$sql);
+                                        
+                                            while($row = $query->fetch_assoc()) {
+                                                echo '<option value="'.$row["bdcode"].'">'.$row["bdname"].'</option>';
+                                            }
+                                    ?>
+                            </select>
                         </div>
                         <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">Max</label>
-                            <input type="number" class="form-control" name="stmax" id="stmax" required>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        
-
-                        <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">ProductType</label>
-                            <select class="form-control" name="type" id="type">
-                                <option value="FG">Finish Goods</option>
-                                <option value="SFG">Semi Finish Goods</option>
-                                <option value="MAT">Material</option>
+                            <label for="recipient-name" class="col-form-label">สีสินค้า</label>                            
+                            <select class="form-control" name="clcode" id="clcode" >
+                                <?php 
+                                            
+                                        	$sql = "SELECT * FROM `color` where status = 'Y' ";
+                                            $query = mysqli_query($conn,$sql);
+                                        
+                                            while($row = $query->fetch_assoc()) {
+                                                echo '<option value="'.$row["clcode"].'">'.$row["clname"].'</option>';
+                                            }
+                                    ?>
                             </select>
                         </div>
                         <div class="form-group col-lg-3 col-6">
@@ -69,10 +86,8 @@
                                 <option value="Y">Active</option>
                                 <option value="N">Inactive</option>
                             </select>
-
                         </div>
                     </div>
-                    <input type="hidden" id="code" name="code">
                     <div class="modal-footer">
                         <div class="col text-center">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

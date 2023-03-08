@@ -3,9 +3,9 @@
     include('../../conn.php');
     date_default_timezone_set('Asia/Bangkok');
 
-    $strSQL = "UPDATE brand SET ";
-    $strSQL .= "bdname='".$_POST["bdname"]."',typecode='".$_POST["typecode"]."',status='".$_POST["status"]."' ";
-    $strSQL .= "WHERE bdcode= '".$_POST["bdcode"]."' ";
+    $strSQL = "UPDATE color SET ";
+    $strSQL .= "clname='".$_POST["clname"]."',typecode='".$_POST["typecode"]."',status='".$_POST["status"]."' ";
+    $strSQL .= "WHERE clcode= '".$_POST["clcode"]."' ";
 
     
 	$query = mysqli_query($conn,$strSQL);
@@ -14,7 +14,7 @@
 
 
         if($query) {
-            echo json_encode(array('status' => '1','message'=> 'แก้ไขแบรนด์ '.$_POST["bdname"].' สำเร็จ'));
+            echo json_encode(array('status' => '1','message'=> 'แก้ไขสี '.$_POST["clname"].' สำเร็จ'));
         }
         else
         {

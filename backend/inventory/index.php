@@ -65,7 +65,7 @@ include_once('../conn.php');
                                     <div class="btn-group" id="btnAddSO" role="group" aria-label="Basic example">
                                         <button type="button" class="btn btn-success" data-toggle="modal"
                                             data-target="#modal_add"><i class="fa fa fa-tags" aria-hidden="true"></i>
-                                            เพิ่มรหัสวัสดุ</button>
+                                            เพิ่มรหัสสินค้า</button>
                                         <button type="button" id="btnRefresh" class="btn btn-primary"><i
                                                 class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
                                     </div>
@@ -87,9 +87,9 @@ include_once('../conn.php');
                                 <table name="tableStock" id="tableStock" class="table table-bordered table-striped">
                                     <thead style=" background-color:#D6EAF8;">
                                         <tr>
-                                            <th width="10%">รหัสวัสดุ</th>
-                                            <th width="40%">ชื่อวัสดุ</th>
-                                            <th width="20%">ประเภทวัสดุ</th>
+                                            <th width="10%">รหัสสินค้า</th>
+                                            <th width="40%">ชื่อสินค้า</th>
+                                            <th width="20%">ประเภทสินค้า</th>
                                             <th width="12%" style="text-align:right">จำนวนสต๊อก</th>
                                             <th width="14%" style="text-align:center">หน่วย</th>
 
