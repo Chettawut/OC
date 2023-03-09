@@ -79,7 +79,8 @@ $("#frmAddStock").submit(function(e) {
     $.ajax({
         type: "POST",
         url: "ajax/add_stock.php",
-        data: $("#frmAddStock").serialize(),
+        data: $("#frmAddStock").serialize() +
+            "&id=" + '<?php echo $_SESSION['id'];?>',
         success: function(result) {
             if (result.status == 1) // Success
             {
@@ -103,7 +104,8 @@ $("#frmEditStock").submit(function(e) {
     $.ajax({
         type: "POST",
         url: "ajax/edit_stock.php",
-        data: $("#frmEditStock").serialize(),
+        data: $("#frmEditStock").serialize() +
+            "&id=" + '<?php echo $_SESSION['id'];?>',
         success: function(result) {
 
             if (result.status == 1) // Success

@@ -89,7 +89,8 @@ $("#frmEditBrand").submit(function() {
     $.ajax({
         type: "POST",
         url: "ajax/edit_brand.php",
-        data: $("#frmEditBrand").serialize(),
+        data: $("#frmEditBrand").serialize() +
+            "&id=" + '<?php echo $_SESSION['id'];?>',
         success: function(result) {
 
             if (result.status == 1) // Success

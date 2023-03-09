@@ -35,11 +35,11 @@
                                     ?>
                             </select>
                         </div>
-                        
+
                     </div>
                     <div class="row">
-                    <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">ประเภทสินค้า</label>                            
+                        <div class="form-group col-lg-3 col-6">
+                            <label for="recipient-name" class="col-form-label">ประเภทสินค้า</label>
                             <select class="form-control" name="typecode" id="typecode">
                                 <?php 
                                             
@@ -53,7 +53,7 @@
                             </select>
                         </div>
                         <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">แบรนด์สินค้า</label>                            
+                            <label for="recipient-name" class="col-form-label">แบรนด์สินค้า</label>
                             <select class="form-control" name="bdcode" id="bdcode">
                                 <?php 
                                             
@@ -67,8 +67,8 @@
                             </select>
                         </div>
                         <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">สีสินค้า</label>                            
-                            <select class="form-control" name="clcode" id="clcode" >
+                            <label for="recipient-name" class="col-form-label">สีสินค้า</label>
+                            <select class="form-control" name="clcode" id="clcode">
                                 <?php 
                                             
                                         	$sql = "SELECT * FROM `color` where status = 'Y' ";
@@ -81,22 +81,22 @@
                             </select>
                         </div>
                         <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">Status</label>
+                            <label for="recipient-name" class="col-form-label">สถานะการใช้งาน</label>
                             <select class="form-control" name="status" id="status">
-                                <option value="Y">Active</option>
-                                <option value="N">Inactive</option>
+                                <option value="Y">เปิดใช้งาน</option>
+                                <option value="N">ปิดการใช้งาน</option>
                             </select>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <div class="col text-center">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" id="btnEditSo" form="frmEditStock"
-                                class="btn btn-primary">Edit</button>
-                        </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col text-center">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                        <button type="submit" id="btnEditSo" form="frmEditStock" class="btn btn-primary">แก้ไข</button>
                     </div>
                 </div>
-            </form>
         </div>
+        </form>
     </div>
+</div>
 </div>

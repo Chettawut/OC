@@ -12,12 +12,16 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">ProductCode</label>
+                            <label for="recipient-name" class="col-form-label">รหัสสินค้า</label>
                             <input type="text" class="form-control" name="add_stcode" id="add_stcode" minlength="6"
                                 maxlength="9" required>
                         </div>
+                        <div class="form-group col-lg-6 col-12">
+                            <label class="col-form-label">ชื่อสินค้า</label>
+                            <input type="text" class="form-control" name="add_stname1" id="add_stname1" required>
+                        </div>
                         <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">Unit</label>
+                            <label for="recipient-name" class="col-form-label">หน่วย</label>
                             <select class="form-control" name="add_unit" id="add_unit">
                                 <?php 
                                             
@@ -30,38 +34,63 @@
                                     ?>
                             </select>
                         </div>
-                        <div class="form-group col-lg-6 col-12">
-                            <label class="col-form-label">ProductName</label>
-                            <input type="text" class="form-control" name="add_stname1" id="add_stname1" required>
-                        </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">Min ขั้นต่ำ</label>
-                            <input type="number" class="form-control" name="add_stmin1" id="add_stmin1" required>
+                            <label for="recipient-name" class="col-form-label">ประเภทสินค้า</label>
+                            <select class="form-control" name="add_typecode" id="add_typecode">
+                                <?php 
+                                            
+                                        	$sql = "SELECT * FROM `type` where status = 'Y' ";
+                                            $query = mysqli_query($conn,$sql);
+                                        
+                                            while($row = $query->fetch_assoc()) {
+                                                echo '<option value="'.$row["typecode"].'">'.$row["typename"].'</option>';
+                                            }
+                                    ?>
+                            </select>
                         </div>
                         <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">Min ขีดแดง</label>
-                            <input type="number" class="form-control" name="add_stmin2" id="add_stmin2" required>
+                            <label for="recipient-name" class="col-form-label">แบรนด์สินค้า</label>
+                            <select class="form-control" name="add_bdcode" id="add_bdcode">
+                                <?php 
+                                            
+                                        	$sql = "SELECT * FROM `brand` where status = 'Y' ";
+                                            $query = mysqli_query($conn,$sql);
+                                        
+                                            while($row = $query->fetch_assoc()) {
+                                                echo '<option value="'.$row["bdcode"].'">'.$row["bdname"].'</option>';
+                                            }
+                                    ?>
+                            </select>
                         </div>
                         <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">Max</label>
-                            <input type="number" class="form-control" name="add_stmax" id="add_stmax" required>
+                            <label for="recipient-name" class="col-form-label">สีสินค้า</label>
+                            <select class="form-control" name="add_clcode" id="add_clcode">
+                                <?php 
+                                            
+                                        	$sql = "SELECT * FROM `color` where status = 'Y' ";
+                                            $query = mysqli_query($conn,$sql);
+                                        
+                                            while($row = $query->fetch_assoc()) {
+                                                echo '<option value="'.$row["clcode"].'">'.$row["clname"].'</option>';
+                                            }
+                                    ?>
+                            </select>
                         </div>
                         <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">ProductType</label>
-                            <select class="form-control" name="add_type" id="add_type">
-                                <option value="FG">Finish Goods</option>
-                                <option value="SFG">Semi Finish Goods</option>
-                                <option value="MAT">Material</option>
+                            <label for="recipient-name" class="col-form-label">สถานะการใช้งาน</label>
+                            <select class="form-control" name="add_status" id="add_status">
+                                <option value="Y">เปิดใช้งาน</option>
+                                <option value="N">ปิดการใช้งาน</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <div class="col text-center">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" id="btnAddSo" form="frmAddStock" class="btn btn-primary">Add</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                        <button type="submit" id="btnAddSo" form="frmAddStock" class="btn btn-primary">เพิ่ม</button>
                     </div>
                 </div>
         </div>

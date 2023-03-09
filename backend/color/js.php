@@ -89,7 +89,8 @@ $("#frmEditColor").submit(function() {
     $.ajax({
         type: "POST",
         url: "ajax/edit_color.php",
-        data: $("#frmEditColor").serialize(),
+        data: $("#frmEditColor").serialize() +
+            "&id=" + '<?php echo $_SESSION['id'];?>',
         success: function(result) {
 
             if (result.status == 1) // Success
