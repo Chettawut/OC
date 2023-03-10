@@ -4,7 +4,7 @@
     date_default_timezone_set('Asia/Bangkok');
 
     $strSQL = "UPDATE brand SET ";
-    $strSQL .= "bdname='".$_POST["bdname"]."',typecode='".$_POST["typecode"]."',status='".$_POST["status"]."',s_date='".date("Y-m-d")."',s_time='".date("H:i:s")."',s_user='".$_POST["id"]."' ";
+    $strSQL .= "bdname='".$_POST["bdname"]."',grcode='".$_POST["grcode"]."',status='".$_POST["status"]."',s_date='".date("Y-m-d")."',s_time='".date("H:i:s")."',s_user='".$_POST["id"]."' ";
     $strSQL .= "WHERE bdcode= '".$_POST["bdcode"]."' ";
 
     

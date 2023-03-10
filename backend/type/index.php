@@ -60,7 +60,7 @@
                                     <div class="btn-group" id="btnAdd" role="group" aria-label="Basic example">
                                         <button type="button" class="btn btn-success" data-toggle="modal"
                                             data-target="#modal_add"><i class="fa fa fa-tags" aria-hidden="true"></i>
-                                            เพิ่ม Type</button>
+                                            เพิ่มประเภทสินค้า</button>
                                         <button type="button" id="btnRefresh" class="btn btn-primary"><i
                                                 class="fas fa-sync-alt" aria-hidden="true"></i> Refresh</button>
                                     </div>
@@ -80,7 +80,8 @@
                             <table name="tableType" id="tableType" class="table table-bordered table-striped">
                                 <thead style="background-color:#D6EAF8;">
                                     <tr>
-                                        <th width="80%">ชื่อประเภทสินค้า</th>
+                                        <th width="40%">ชื่อประเภทสินค้า</th>
+                                        <th width="40%">ชื่อหมวดสินค้า</th>
                                         <th width="20%">สถานะการใช้งาน</th>
                                     </tr>
                                 </thead>

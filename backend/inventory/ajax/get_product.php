@@ -3,7 +3,7 @@
 	include('../../conn.php');
 
 	$sql = "SELECT b.amount as amount1,c.typename,a.stcode,a.stname1,a.unit,a.status ";
-	$sql .= "FROM stock a inner join stock_level as b on (a.stcode=b.stcode) ";  
+	$sql .= "FROM product a inner join product_level as b on (a.stcode=b.stcode) ";  
 	$sql .= " inner join type as c on (a.typecode=c.typecode) ";  
 	$sql .= " where b.places = 1 ";  
 

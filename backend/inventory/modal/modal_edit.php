@@ -39,6 +39,20 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-lg-3 col-6">
+                            <label for="recipient-name" class="col-form-label">หมวดสินค้า</label>
+                            <select class="form-control" name="grcode" id="grcode">
+                                <?php 
+                                            
+                                        	$sql = "SELECT * FROM `group` where status = 'Y' ";
+                                            $query = mysqli_query($conn,$sql);
+                                        
+                                            while($row = $query->fetch_assoc()) {
+                                                echo '<option value="'.$row["grcode"].'">'.$row["grname"].'</option>';
+                                            }
+                                    ?>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-3 col-6">
                             <label for="recipient-name" class="col-form-label">ประเภทสินค้า</label>
                             <select class="form-control" name="typecode" id="typecode">
                                 <?php 
@@ -80,6 +94,8 @@
                                     ?>
                             </select>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="form-group col-lg-3 col-6">
                             <label for="recipient-name" class="col-form-label">สถานะการใช้งาน</label>
                             <select class="form-control" name="status" id="status">

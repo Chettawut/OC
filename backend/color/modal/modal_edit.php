@@ -16,15 +16,15 @@
                             <input type="text" class="form-control" name="clname" id="clname" required>
                         </div>
                         <div class="col-md-6">
-                            <label class="col-form-label">ชื่อ Type </label>
-                            <select class="form-control" name="typecode" id="typecode" required>
+                            <label class="col-form-label">หมวดสินค้า </label>
+                            <select class="form-control" name="grcode" id="grcode" required>
                                 <?php 
                                             
-                                        	$sql = "SELECT * FROM `type` where status = 'Y' ";
+                                        	$sql = "SELECT * FROM `group` where status = 'Y' ";
                                             $query = mysqli_query($conn,$sql);
                                         
                                             while($row = $query->fetch_assoc()) {
-                                                echo '<option value="'.$row["typecode"].'">'.$row["typename"].'</option>';
+                                                echo '<option value="'.$row["grcode"].'">'.$row["grname"].'</option>';
                                             }
                                     ?>
                             </select>

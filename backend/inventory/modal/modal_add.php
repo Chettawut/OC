@@ -37,6 +37,20 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-lg-3 col-6">
+                            <label for="recipient-name" class="col-form-label">หมวดสินค้า</label>
+                            <select class="form-control" name="add_grcode" id="add_grcode">
+                                <?php 
+                                            
+                                        	$sql = "SELECT * FROM `group` where status = 'Y' ";
+                                            $query = mysqli_query($conn,$sql);
+                                        
+                                            while($row = $query->fetch_assoc()) {
+                                                echo '<option value="'.$row["grcode"].'">'.$row["grname"].'</option>';
+                                            }
+                                    ?>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-3 col-6">
                             <label for="recipient-name" class="col-form-label">ประเภทสินค้า</label>
                             <select class="form-control" name="add_typecode" id="add_typecode">
                                 <?php 
@@ -76,13 +90,6 @@
                                                 echo '<option value="'.$row["clcode"].'">'.$row["clname"].'</option>';
                                             }
                                     ?>
-                            </select>
-                        </div>
-                        <div class="form-group col-lg-3 col-6">
-                            <label for="recipient-name" class="col-form-label">สถานะการใช้งาน</label>
-                            <select class="form-control" name="add_status" id="add_status">
-                                <option value="Y">เปิดใช้งาน</option>
-                                <option value="N">ปิดการใช้งาน</option>
                             </select>
                         </div>
                     </div>

@@ -19,7 +19,7 @@ $(function() {
                     '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
                     .typecode[
                         count] + '" data-whatever="' + result.typecode[
-                        count] + '">.<td>' + result.typename[count] + '</td><td>' +
+                        count] + '"><td>' + result.typename[count] + '</td><td>' + result.grname[count] + '</td><td>' +
                     status + '</td></tr>');
             }
 
@@ -89,7 +89,8 @@ $("#frmEditType").submit(function() {
     $.ajax({
         type: "POST",
         url: "ajax/edit_type.php",
-        data: $("#frmEditType").serialize(),
+        data: $("#frmEditType").serialize()+
+            "&id=" + '<?php echo $_SESSION['id'];?>',
         success: function(result) {
 
             if (result.status == 1) // Success

@@ -3,7 +3,7 @@
 	include('../../conn.php');
 
 	// $_POST['idcode']='100001';
-	$strSQL = "SELECT * FROM `stock`  where stcode = '".$_POST['idcode']."'";
+	$strSQL = "SELECT * FROM `product`  where stcode = '".$_POST['idcode']."'";
 	$query = mysqli_query($conn,$strSQL);
 	
 	$json_result=array(

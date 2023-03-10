@@ -13,8 +13,22 @@
                     action="javascript:void(0);">
                     <div class="form-row">
                         <div class="col-md-6">
-                            <label class="col-form-label">ชื่อ Type </label>
+                            <label class="col-form-label">ชื่อประเภทสินค้า</label>
                             <input type="text" class="form-control" name="add_typename" id="add_typename" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-form-label">หมวดสินค้า </label>                            
+                            <select class="form-control" name="add_grcode" id="add_grcode" required>
+                                <?php 
+                                            
+                                        	$sql = "SELECT * FROM `group` where status = 'Y' ";
+                                            $query = mysqli_query($conn,$sql);
+                                        
+                                            while($row = $query->fetch_assoc()) {
+                                                echo '<option value="'.$row["grcode"].'">'.$row["grname"].'</option>';
+                                            }
+                                    ?>
+                            </select>
                         </div>
                     </div>
 

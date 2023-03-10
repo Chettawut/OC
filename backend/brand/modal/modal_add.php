@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content w3-flat-turquoise">
             <div class="modal-header bg-gradient-secondary">
-                <h5 class="modal-title">เพิ่มประเภทสินค้า</h5>
+                <h5 class="modal-title">เพิ่มแบรนด์สินค้า</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -17,15 +17,15 @@
                             <input type="text" class="form-control" name="add_bdname" id="add_bdname" required>
                         </div>
                         <div class="col-md-6">
-                            <label class="col-form-label">ชื่อ Type </label>                            
-                            <select class="form-control" name="add_typecode" id="add_typecode" required>
+                            <label class="col-form-label">หมวดสินค้า</label>                            
+                            <select class="form-control" name="add_grcode" id="add_grcode" required>
                                 <?php 
                                             
-                                        	$sql = "SELECT * FROM `type` where status = 'Y' ";
+                                        	$sql = "SELECT * FROM `group` where status = 'Y' ";
                                             $query = mysqli_query($conn,$sql);
                                         
                                             while($row = $query->fetch_assoc()) {
-                                                echo '<option value="'.$row["typecode"].'">'.$row["typename"].'</option>';
+                                                echo '<option value="'.$row["grcode"].'">'.$row["grname"].'</option>';
                                             }
                                     ?>
                             </select>

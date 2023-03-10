@@ -19,7 +19,7 @@ $(function() {
                     '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
                     .clcode[
                         count] + '" data-whatever="' + result.clcode[
-                        count] + '"><td>' + result.clname[count] + '</td><td>' + result.typename[count] + '</td><td>' +
+                        count] + '"><td>' + result.clname[count] + '</td><td>' + result.grname[count] + '</td><td>' +
                     status + '</td></tr>');
             }
 
@@ -52,7 +52,7 @@ $('#modal_edit').on('show.bs.modal', function(event) {
         success: function(result) {
             modal.find('.modal-body #clcode').val(result.clcode);
             modal.find('.modal-body #clname').val(result.clname);
-            modal.find('.modal-body #typecode').val(result.typecode);
+            modal.find('.modal-body #grcode').val(result.grcode);
             modal.find('.modal-body #status').val(result.status);
 
         }

@@ -4,7 +4,7 @@
     date_default_timezone_set('Asia/Bangkok');
 
     $strSQL = "UPDATE type SET ";
-    $strSQL .= "typename='".$_POST["typename"]."',status='".$_POST["status"]."',s_date='".date("Y-m-d")."',s_time='".date("H:i:s")."',s_user='".$_POST["id"]."' ";
+    $strSQL .= "typename='".$_POST["typename"]."',grcode='".$_POST["grcode"]."',status='".$_POST["status"]."',s_date='".date("Y-m-d")."',s_time='".date("H:i:s")."',s_user='".$_POST["id"]."' ";
     $strSQL .= "WHERE typecode= '".$_POST["typecode"]."' ";
 
     

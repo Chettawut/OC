@@ -4,7 +4,7 @@ $(function() {
 
     $.ajax({
         type: "POST",
-        url: "ajax/get_stock.php",
+        url: "ajax/get_product.php",
         //    data: $("#frmMain").serialize(),
         success: function(result) {
 
@@ -15,7 +15,7 @@ $(function() {
                     .stcode[
                         count] + '" data-whatever="' + result.stcode[
                         count] + '">.<td>' + result.stcode[count] + '</td><td>' +
-                    result.stname1[count] + '</td><td style="text-align:right">' +
+                    result.stname1[count] + '</td><td style="text-align:left">' +
                     result.typename[count] + '</td><td style="text-align:right">' +
                     result.amount1[count] + '</td><td  style="text-align:center">' + result
                     .unit[count] + '</td></tr>');
@@ -52,20 +52,79 @@ $('#modal_edit').on('show.bs.modal', function(event) {
 
     $.ajax({
         type: "POST",
-        url: "ajax/getsup_stock.php",
+        url: "ajax/getsup_product.php",
         data: "idcode=" + recipient,
-        success: function(result) {            
+        success: function(result) {
 
             modal.find('.modal-body #stcode').val(result.stcode);
             modal.find('.modal-body #stname1').val(result.stname1);
             modal.find('.modal-body #unit').val(result.unit);
             modal.find('.modal-body #typecode').val(result.typecode);
             modal.find('.modal-body #bdcode').val(result.bdcode);
-            modal.find('.modal-body #clcode').val(result.clcode);    
+            modal.find('.modal-body #clcode').val(result.clcode);
             modal.find('.modal-body #status').val(result.status);
 
         }
     });
+});
+
+
+$("#grcode").change(function() {
+
+    let data = $("#grcode").val()
+    $('#typecode')[0].options.length = 0;
+    $.ajax({
+        type: "POST",
+        url: "ajax/get_type.php",
+        data: "idcode=" + data,
+        success: function(result) {
+
+            for (count = 0; count < result.typecode.length; count++) {
+
+                $("#typecode").append(new Option(result.typename[count], result.typecode[count]));
+            }
+
+
+        }
+    });
+
+    $('#bdcode')[0].options.length = 0;
+    $.ajax({
+        type: "POST",
+        url: "ajax/get_brand.php",
+        data: "idcode=" + data,
+        success: function(result) {
+
+            for (count = 0; count < result.bdcode.length; count++) {
+
+                $("#bdcode").append(new Option(result.bdname[count], result.bdcode[count]));
+            }
+
+
+        }
+    });
+
+    $('#clcode')[0].options.length = 0;
+    $.ajax({
+        type: "POST",
+        url: "ajax/get_color.php",
+        data: "idcode=" + data,
+        success: function(result) {
+
+            for (count = 0; count < result.clcode.length; count++) {
+
+                $("#clcode").append(new Option(result.clname[count], result.clcode[count]));
+            }
+
+
+        }
+    });
+});
+
+$("#add_grcode").change(function() {
+    $('#add_typecode')[0].options.length = 0;
+    $('#add_bdcode')[0].options.length = 0;
+    $('#add_clcode')[0].options.length = 0;
 });
 
 
@@ -78,7 +137,7 @@ $("#frmAddStock").submit(function(e) {
     e.preventDefault();
     $.ajax({
         type: "POST",
-        url: "ajax/add_stock.php",
+        url: "ajax/add_product.php",
         data: $("#frmAddStock").serialize() +
             "&id=" + '<?php echo $_SESSION['id'];?>',
         success: function(result) {
@@ -103,7 +162,7 @@ $("#frmEditStock").submit(function(e) {
     })
     $.ajax({
         type: "POST",
-        url: "ajax/edit_stock.php",
+        url: "ajax/edit_product.php",
         data: $("#frmEditStock").serialize() +
             "&id=" + '<?php echo $_SESSION['id'];?>',
         success: function(result) {

@@ -4,7 +4,7 @@
     date_default_timezone_set('Asia/Bangkok');
 
     $strSQL = "UPDATE color SET ";
-    $strSQL .= "clname='".$_POST["clname"]."',typecode='".$_POST["typecode"]."',status='".$_POST["status"]."',s_date='".date("Y-m-d")."',s_time='".date("H:i:s")."',s_user='".$_POST["id"]."' ";
+    $strSQL .= "clname='".$_POST["clname"]."',grcode='".$_POST["grcode"]."',status='".$_POST["status"]."',s_date='".date("Y-m-d")."',s_time='".date("H:i:s")."',s_user='".$_POST["id"]."' ";
     $strSQL .= "WHERE clcode= '".$_POST["clcode"]."' ";
 
     

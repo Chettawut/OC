@@ -3,34 +3,34 @@ $(function() {
 
     $.ajax({
         type: "POST",
-        url: "ajax/get_brand.php",
+        url: "ajax/get_group.php",
         //    data: $("#frmMain").serialize(),
         success: function(result) {
 
-            for (count = 0; count < result.bdcode.length; count++) {
+            for (count = 0; count < result.grcode.length; count++) {
 
                 var status = '';
                 if (result.status[count] == 'Y')
                     status = 'เปิดใช้งาน'
                 else
                     status = 'ปิดใช้งาน'
-                    
-                $('#tableBrand').append(
+
+                $('#tableGroup').append(
                     '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
-                    .bdcode[
-                        count] + '" data-whatever="' + result.bdcode[
-                        count] + '"><td>' + result.bdname[count] + '</td><td>' + result.grname[count] + '</td><td>' +
+                    .grcode[
+                        count] + '" data-whatever="' + result.grcode[
+                        count] + '">.<td>' + result.grname[count] + '</td><td>' +
                     status + '</td></tr>');
             }
 
-            var table = $('#tableBrand').DataTable({
+            var table = $('#tableGroup').DataTable({
                 "dom": '<"pull-right"f>rt<"bottom"p><"clear">',
                 "ordering": false
             });
 
             $(".dataTables_filter input[type='search']").attr({
-                size: 40,
-                maxlength: 40
+                size: 60,
+                maxlength: 60
             });
 
 
@@ -47,12 +47,11 @@ $('#modal_edit').on('show.bs.modal', function(event) {
 
     $.ajax({
         type: "POST",
-        url: "ajax/getsup_brand.php",
+        url: "ajax/getsup_group.php",
         data: "idcode=" + recipient,
         success: function(result) {
-            modal.find('.modal-body #bdcode').val(result.bdcode);
-            modal.find('.modal-body #bdname').val(result.bdname);
             modal.find('.modal-body #grcode').val(result.grcode);
+            modal.find('.modal-body #grname').val(result.grname);
             modal.find('.modal-body #status').val(result.status);
 
         }
@@ -63,13 +62,14 @@ $("#btnRefresh").click(function() {
     window.location.reload();
 });
 
-$("#frmAddBrand").submit(function(e) {
+//เพิ่มประเภท
+$("#frmAddGroup").submit(function(e) {
     e.preventDefault();
     
     $.ajax({
         type: "POST",
-        url: "ajax/add_brand.php",
-        data: $("#frmAddBrand").serialize() +
+        url: "ajax/add_group.php",
+        data: $("#frmAddGroup").serialize() +
             "&id=" + '<?php echo $_SESSION['id'];?>',
         success: function(result) {
             if (result.status == 1) // Success
@@ -84,12 +84,12 @@ $("#frmAddBrand").submit(function(e) {
 
 });
 
-$("#frmEditBrand").submit(function() {
+$("#frmEditGroup").submit(function() {
 
     $.ajax({
         type: "POST",
-        url: "ajax/edit_brand.php",
-        data: $("#frmEditBrand").serialize() +
+        url: "ajax/edit_group.php",
+        data: $("#frmEditGroup").serialize() +
             "&id=" + '<?php echo $_SESSION['id'];?>',
         success: function(result) {
 

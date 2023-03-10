@@ -3,9 +3,9 @@
     include('../../conn.php');
     date_default_timezone_set('Asia/Bangkok');
     
-    $StrSQL = "INSERT INTO stock (`stcode`, `stname1`, `unit`, `typecode`, `bdcode`, `clcode` , `status`,`s_date`,`s_time`, s_user) ";
+    $StrSQL = "INSERT INTO product (`stcode`, `stname1`, `unit`,grcode, `typecode`, `bdcode`, `clcode` , `status`,`s_date`,`s_time`, s_user) ";
     $StrSQL .= "VALUES (";
-    $StrSQL .= "'".$_POST["add_stcode"]."','".$_POST["add_stname1"]."','".$_POST["add_unit"]."','".$_POST["add_typecode"]."','".$_POST["add_bdcode"]."' ";
+    $StrSQL .= "'".$_POST["add_stcode"]."','".$_POST["add_stname1"]."','".$_POST["add_unit"]."','".$_POST["add_bdcode"]."','".$_POST["add_typecode"]."','".$_POST["add_bdcode"]."' ";
     $StrSQL .= ",'".$_POST["add_clcode"]."','Y','".date("Y-m-d")."','".date("H:i:s")."','".$_POST["id"]."' ";
     $StrSQL .= ")";
     $query = mysqli_query($conn,$StrSQL);
@@ -19,7 +19,7 @@
             $query1 = mysqli_query($conn,$sql);
 
                 while($row = $query1->fetch_assoc()) {
-                    $strSQL2 = " INSERT INTO stock_level (stcode,price,amtprice,amount,places,s_date,s_time) ";
+                    $strSQL2 = " INSERT INTO product_level (stcode,price,amtprice,amount,places,s_date,s_time) ";
                     $strSQL2 .= " VALUES ('".$_POST["add_stcode"]."','0','0','0','".$row["placescode"]."','".date("Y-m-d"). "','".date("H:i:s"). "' ) ";
                     $oRs2=mysqli_query($conn,$strSQL2);
                 }
