@@ -23,7 +23,7 @@
                         </div>
                         <div class="form-group col-lg-3 col-6">
                             <label for="recipient-name" class="col-form-label">หน่วย</label>
-                            <select class="form-control" name="unit" id="unit">
+                            <select class="form-control" name="unit" id="unit" required>
                                 <?php 
                                             
                                         	$sql = "SELECT * FROM `unit` where status = 'Y' ";
@@ -40,7 +40,7 @@
                     <div class="row">
                         <div class="form-group col-lg-3 col-6">
                             <label for="recipient-name" class="col-form-label">หมวดสินค้า</label>
-                            <select class="form-control" name="grcode" id="grcode">
+                            <select class="form-control" name="grcode" id="grcode" required>
                                 <?php 
                                             
                                         	$sql = "SELECT * FROM `group` where status = 'Y' ";
@@ -54,7 +54,7 @@
                         </div>
                         <div class="form-group col-lg-3 col-6">
                             <label for="recipient-name" class="col-form-label">ประเภทสินค้า</label>
-                            <select class="form-control" name="typecode" id="typecode">
+                            <select class="form-control" name="typecode" id="typecode" required>
                                 <?php 
                                             
                                         	$sql = "SELECT * FROM `type` where status = 'Y' ";
@@ -68,7 +68,7 @@
                         </div>
                         <div class="form-group col-lg-3 col-6">
                             <label for="recipient-name" class="col-form-label">แบรนด์สินค้า</label>
-                            <select class="form-control" name="bdcode" id="bdcode">
+                            <select class="form-control" name="bdcode" id="bdcode" required>
                                 <?php 
                                             
                                         	$sql = "SELECT * FROM `brand` where status = 'Y' ";
@@ -82,7 +82,7 @@
                         </div>
                         <div class="form-group col-lg-3 col-6">
                             <label for="recipient-name" class="col-form-label">สีสินค้า</label>
-                            <select class="form-control" name="clcode" id="clcode">
+                            <select class="form-control" name="clcode" id="clcode" required>
                                 <?php 
                                             
                                         	$sql = "SELECT * FROM `color` where status = 'Y' ";
@@ -98,7 +98,7 @@
                     <div class="row">
                         <div class="form-group col-lg-3 col-6">
                             <label for="recipient-name" class="col-form-label">สถานะการใช้งาน</label>
-                            <select class="form-control" name="status" id="status">
+                            <select class="form-control" name="status" id="status" required>
                                 <option value="Y">เปิดใช้งาน</option>
                                 <option value="N">ปิดการใช้งาน</option>
                             </select>

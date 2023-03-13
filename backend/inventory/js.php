@@ -79,6 +79,7 @@ $("#grcode").change(function() {
         data: "idcode=" + data,
         success: function(result) {
 
+            $("#typecode").append(new Option('--- กรุณาเลือก ---',''));
             for (count = 0; count < result.typecode.length; count++) {
 
                 $("#typecode").append(new Option(result.typename[count], result.typecode[count]));
@@ -95,6 +96,7 @@ $("#grcode").change(function() {
         data: "idcode=" + data,
         success: function(result) {
 
+            $("#bdcode").append(new Option('--- กรุณาเลือก ---',''));
             for (count = 0; count < result.bdcode.length; count++) {
 
                 $("#bdcode").append(new Option(result.bdname[count], result.bdcode[count]));
@@ -111,6 +113,7 @@ $("#grcode").change(function() {
         data: "idcode=" + data,
         success: function(result) {
 
+            $("#clcode").append(new Option('--- กรุณาเลือก ---',''));
             for (count = 0; count < result.clcode.length; count++) {
 
                 $("#clcode").append(new Option(result.clname[count], result.clcode[count]));
@@ -122,9 +125,57 @@ $("#grcode").change(function() {
 });
 
 $("#add_grcode").change(function() {
+    let data = $("#add_grcode").val()
     $('#add_typecode')[0].options.length = 0;
+    $.ajax({
+        type: "POST",
+        url: "ajax/get_type.php",
+        data: "idcode=" + data,
+        success: function(result) {
+
+            $("#add_typecode").append(new Option('--- กรุณาเลือก ---',''));
+            for (count = 0; count < result.typecode.length; count++) {
+
+                $("#add_typecode").append(new Option(result.typename[count], result.typecode[count]));
+            }
+
+
+        }
+    });
+
     $('#add_bdcode')[0].options.length = 0;
+    $.ajax({
+        type: "POST",
+        url: "ajax/get_brand.php",
+        data: "idcode=" + data,
+        success: function(result) {
+
+            $("#add_bdcode").append(new Option('--- กรุณาเลือก ---',''));
+            for (count = 0; count < result.bdcode.length; count++) {
+
+                $("#add_bdcode").append(new Option(result.bdname[count], result.bdcode[count]));
+            }
+
+
+        }
+    });
+
     $('#add_clcode')[0].options.length = 0;
+    $.ajax({
+        type: "POST",
+        url: "ajax/get_color.php",
+        data: "idcode=" + data,
+        success: function(result) {
+
+            $("#add_clcode").append(new Option('--- กรุณาเลือก ---',''));
+            for (count = 0; count < result.clcode.length; count++) {
+
+                $("#add_clcode").append(new Option(result.clname[count], result.clcode[count]));
+            }
+
+
+        }
+    });
 });
 
 

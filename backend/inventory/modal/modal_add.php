@@ -22,7 +22,8 @@
                         </div>
                         <div class="form-group col-lg-3 col-6">
                             <label for="recipient-name" class="col-form-label">หน่วย</label>
-                            <select class="form-control" name="add_unit" id="add_unit">
+                            <select class="form-control" name="add_unit" id="add_unit" required>
+                            <option value="">--- กรุณาเลือก ---</option>
                                 <?php 
                                             
                                         	$sql = "SELECT * FROM `unit` where status = 'Y' ";
@@ -38,7 +39,8 @@
                     <div class="row">
                         <div class="form-group col-lg-3 col-6">
                             <label for="recipient-name" class="col-form-label">หมวดสินค้า</label>
-                            <select class="form-control" name="add_grcode" id="add_grcode">
+                            <select class="form-control" name="add_grcode" id="add_grcode" required>
+                                <option value="">--- กรุณาเลือก ---</option>
                                 <?php 
                                             
                                         	$sql = "SELECT * FROM `group` where status = 'Y' ";
@@ -52,44 +54,17 @@
                         </div>
                         <div class="form-group col-lg-3 col-6">
                             <label for="recipient-name" class="col-form-label">ประเภทสินค้า</label>
-                            <select class="form-control" name="add_typecode" id="add_typecode">
-                                <?php 
-                                            
-                                        	$sql = "SELECT * FROM `type` where status = 'Y' ";
-                                            $query = mysqli_query($conn,$sql);
-                                        
-                                            while($row = $query->fetch_assoc()) {
-                                                echo '<option value="'.$row["typecode"].'">'.$row["typename"].'</option>';
-                                            }
-                                    ?>
+                            <select class="form-control" name="add_typecode" id="add_typecode" required>
                             </select>
                         </div>
                         <div class="form-group col-lg-3 col-6">
                             <label for="recipient-name" class="col-form-label">แบรนด์สินค้า</label>
-                            <select class="form-control" name="add_bdcode" id="add_bdcode">
-                                <?php 
-                                            
-                                        	$sql = "SELECT * FROM `brand` where status = 'Y' ";
-                                            $query = mysqli_query($conn,$sql);
-                                        
-                                            while($row = $query->fetch_assoc()) {
-                                                echo '<option value="'.$row["bdcode"].'">'.$row["bdname"].'</option>';
-                                            }
-                                    ?>
+                            <select class="form-control" name="add_bdcode" id="add_bdcode" required>
                             </select>
                         </div>
                         <div class="form-group col-lg-3 col-6">
                             <label for="recipient-name" class="col-form-label">สีสินค้า</label>
-                            <select class="form-control" name="add_clcode" id="add_clcode">
-                                <?php 
-                                            
-                                        	$sql = "SELECT * FROM `color` where status = 'Y' ";
-                                            $query = mysqli_query($conn,$sql);
-                                        
-                                            while($row = $query->fetch_assoc()) {
-                                                echo '<option value="'.$row["clcode"].'">'.$row["clname"].'</option>';
-                                            }
-                                    ?>
+                            <select class="form-control" name="add_clcode" id="add_clcode" required>
                             </select>
                         </div>
                     </div>
