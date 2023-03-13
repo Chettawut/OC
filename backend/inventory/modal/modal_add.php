@@ -11,16 +11,15 @@
             <form name="frmAddStock" id="frmAddStock" method="POST" style="padding:10px;" action="javascript:void(0);">
                 <div class="modal-body">
                     <div class="row">
-                        <div class="form-group col-lg-3 col-6">
+                        <div class="form-group col-lg-3 col-12">
                             <label for="recipient-name" class="col-form-label">รหัสสินค้า</label>
-                            <input type="text" class="form-control" name="add_stcode" id="add_stcode" minlength="6"
-                                maxlength="9" required>
+                            <input type="text" class="form-control" name="add_stcode" id="add_stcode" maxlength="50" required>
                         </div>
                         <div class="form-group col-lg-6 col-12">
                             <label class="col-form-label">ชื่อสินค้า</label>
                             <input type="text" class="form-control" name="add_stname1" id="add_stname1" required>
                         </div>
-                        <div class="form-group col-lg-3 col-6">
+                        <div class="form-group col-lg-3 col-12">
                             <label for="recipient-name" class="col-form-label">หน่วย</label>
                             <select class="form-control" name="add_unit" id="add_unit" required>
                             <option value="">--- กรุณาเลือก ---</option>
@@ -37,7 +36,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-lg-3 col-6">
+                        <div class="form-group col-lg-3 col-12">
                             <label for="recipient-name" class="col-form-label">หมวดสินค้า</label>
                             <select class="form-control" name="add_grcode" id="add_grcode" required>
                                 <option value="">--- กรุณาเลือก ---</option>
@@ -52,17 +51,17 @@
                                     ?>
                             </select>
                         </div>
-                        <div class="form-group col-lg-3 col-6">
+                        <div class="form-group col-lg-3 col-12">
                             <label for="recipient-name" class="col-form-label">ประเภทสินค้า</label>
                             <select class="form-control" name="add_typecode" id="add_typecode" required>
                             </select>
                         </div>
-                        <div class="form-group col-lg-3 col-6">
+                        <div class="form-group col-lg-3 col-12">
                             <label for="recipient-name" class="col-form-label">แบรนด์สินค้า</label>
                             <select class="form-control" name="add_bdcode" id="add_bdcode" required>
                             </select>
                         </div>
-                        <div class="form-group col-lg-3 col-6">
+                        <div class="form-group col-lg-3 col-12">
                             <label for="recipient-name" class="col-form-label">สีสินค้า</label>
                             <select class="form-control" name="add_clcode" id="add_clcode" required>
                             </select>

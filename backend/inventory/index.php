@@ -27,8 +27,8 @@ include_once('../conn.php');
     <div class="wrapper">
 
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?php echo PATH; ?>/backend/img/logo_fb.png" alt="AdminLTELogo"
-                height="60" width="60">
+            <img class="animation__shake" src="<?php echo PATH; ?>/backend/img/LOGO LOGIN.png" alt="AdminLTELogo"
+                 width="100">
         </div>
 
         <?php include_once ROOT_CSS . '/menu_head.php'; ?>
@@ -58,7 +58,7 @@ include_once('../conn.php');
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-6 col-6">
+                        <div class="col-lg-12 col-12">
                             <form data-ajax="false" target="_blank" method="post">
                                 <div data-role="fieldcontain">
 
@@ -81,6 +81,7 @@ include_once('../conn.php');
                             </form>
                         </div>
                     </div>
+                    <br>
                     <div class="row">
                         <div class="col-lg-12 col-12">
                             <div id="mainStock">

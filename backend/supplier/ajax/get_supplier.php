@@ -1,6 +1,6 @@
 <?php
 	header('Content-Type: application/json');
-	include('../../../conn.php');
+	include_once('../../conn.php');
 
 	$sql = "SELECT supcode,supname,province,idno,road,subdistrict,district,status ";
 	$sql .= "FROM supplier  ";   

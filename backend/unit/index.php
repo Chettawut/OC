@@ -27,8 +27,8 @@
     <div class="wrapper">
 
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?php echo PATH; ?>/backend/img/logo_fb.png" alt="AdminLTELogo"
-                height="60" width="60">
+            <img class="animation__shake" src="<?php echo PATH; ?>/backend/img/LOGO LOGIN.png" alt="AdminLTELogo"
+                width="100">
         </div>
 
         <?php include_once ROOT_CSS . '/menu_head.php'; ?>

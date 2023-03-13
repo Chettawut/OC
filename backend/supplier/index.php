@@ -27,8 +27,8 @@ include_once('../conn.php');
     <div class="wrapper">
 
     <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?php echo PATH; ?>/backend/img/logo_fb.png" alt="AdminLTELogo"
-                height="60" width="60">
+            <img class="animation__shake" src="<?php echo PATH; ?>/backend/img/LOGO LOGIN.png" alt="AdminLTELogo"
+                 width="100">
         </div>
 
         <?php include_once ROOT_CSS . '/menu_head.php'; ?>
@@ -45,12 +45,7 @@ include_once('../conn.php');
                         <div class="col-sm-6">
                             <h1 class="m-0"><i class="nav-icon fas fa fa-shopping-cart"></i> ผู้ขาย (Supplier)</h1>
                         </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="<?php echo PATH; ?>/purchase">Purchase</a></li>
-                                <li class="breadcrumb-item active">Supplier</li>
-                            </ol>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -58,7 +53,7 @@ include_once('../conn.php');
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-6 col-6">
+                        <div class="col-lg-12 col-12">
                             <form data-ajax="false" target="_blank" method="post">
                                 <div data-role="fieldcontain">
                                     <div class="btn-group" id="btnAddSO" role="group" aria-label="Basic example">
@@ -78,6 +73,7 @@ include_once('../conn.php');
                             </form>
                         </div>
                     </div>
+                    <br>
                     <div class="row">
                         <div class="col-lg-12 col-12">
                             <table name="tableSupplier" id="tableSupplier" class="table table-bordered table-striped">

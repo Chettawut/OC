@@ -1,6 +1,6 @@
 <?php
 	header('Content-Type: application/json');
-	include('../../conn.php');
+	include_once('../../conn.php');
 
 	// $_POST['idcode']='100001';
 	$strSQL = "SELECT * FROM `color`  where grcode = '".$_POST['idcode']."' and status = 'Y'";

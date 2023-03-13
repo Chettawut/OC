@@ -26,8 +26,8 @@
     <div class="wrapper">
 
         <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="<?php echo PATH; ?>/backend/img/logo_fb.png"
-                alt="AdminLTELogo" height="60" width="60">
+            <img class="animation__shake" src="<?php echo PATH; ?>/backend/img/LOGO LOGIN.png" alt="AdminLTELogo"
+                width="100">
         </div>
 
         <?php include_once ROOT_CSS . '/menu_head.php'; ?>
@@ -48,56 +48,59 @@
                 </div>
             </div>
             <section class="content">
-            <div class="row">
-          <div class="col-lg-4 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>720,000</h3>
+                <div class="row">
+                    <div class="col-lg-4 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-info">
+                            <div class="inner">
+                                <h3>720,000</h3>
 
-                <p>รายรับทั้งหมด</p>
-              </div>
-              <div class="icon">
-                <i class="fas fa-coins"></i>
-              </div>
-              <a href="#" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          
-          
+                                <p>รายรับทั้งหมด</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">ดูเพิ่มเติม <i
+                                    class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
 
-          <div class="col-lg-4 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>- 500,000</h3>
 
-                <p>รายจ่ายทั้งหมด</p>
-              </div>
-              <div class="icon">
-                <i class="fas fa-minus"></i>
-              </div>
-              <a href="#" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-        
-          <div class="col-lg-4 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>+ 220,000<sup style="font-size: 20px"></sup></h3>
 
-                <p>สรุปยอด</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-plus"></i>
-              </div>
-              <a href="#" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
+                    <div class="col-lg-4 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <h3>- 500,000</h3>
+
+                                <p>รายจ่ายทั้งหมด</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-minus"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">ดูเพิ่มเติม <i
+                                    class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+
+                    <div class="col-lg-4 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-success">
+                            <div class="inner">
+                                <h3>+ 220,000<sup style="font-size: 20px"></sup></h3>
+
+                                <p>สรุปยอด</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-plus"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">ดูเพิ่มเติม <i
+                                    class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
                 </div>
             </section>
         </div>

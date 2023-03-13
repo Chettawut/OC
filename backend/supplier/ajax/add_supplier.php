@@ -1,6 +1,6 @@
 <?php
 	header('Content-Type: application/json');
-    include('../../../conn.php');
+    include_once('../../conn.php');
     date_default_timezone_set('Asia/Bangkok');
     
     $StrSQL = "INSERT INTO supplier (`supcode`, `supname`, `idno`, `road`, `subdistrict`, `district` ";

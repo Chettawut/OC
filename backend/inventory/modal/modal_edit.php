@@ -12,16 +12,15 @@
                 action="javascript:void(0);">
                 <div class="modal-body">
                     <div class="row">
-                        <div class="form-group col-lg-3 col-6">
+                        <div class="form-group col-lg-3 col-12">
                             <label for="recipient-name" class="col-form-label">รหัสสินค้า</label>
-                            <input type="text" class="form-control" name="stcode" id="stcode" minlength="6"
-                                maxlength="9" disabled>
+                            <input type="text" class="form-control" name="stcode" id="stcode" disabled>
                         </div>
                         <div class="form-group col-lg-6 col-12">
                             <label class="col-form-label">ชื่อสินค้า</label>
                             <input type="text" class="form-control" name="stname1" id="stname1" required>
                         </div>
-                        <div class="form-group col-lg-3 col-6">
+                        <div class="form-group col-lg-3 col-12">
                             <label for="recipient-name" class="col-form-label">หน่วย</label>
                             <select class="form-control" name="unit" id="unit" required>
                                 <?php 
@@ -38,7 +37,7 @@
 
                     </div>
                     <div class="row">
-                        <div class="form-group col-lg-3 col-6">
+                        <div class="form-group col-lg-3 col-12">
                             <label for="recipient-name" class="col-form-label">หมวดสินค้า</label>
                             <select class="form-control" name="grcode" id="grcode" required>
                                 <?php 
@@ -52,7 +51,7 @@
                                     ?>
                             </select>
                         </div>
-                        <div class="form-group col-lg-3 col-6">
+                        <div class="form-group col-lg-3 col-12">
                             <label for="recipient-name" class="col-form-label">ประเภทสินค้า</label>
                             <select class="form-control" name="typecode" id="typecode" required>
                                 <?php 
@@ -66,7 +65,7 @@
                                     ?>
                             </select>
                         </div>
-                        <div class="form-group col-lg-3 col-6">
+                        <div class="form-group col-lg-3 col-12">
                             <label for="recipient-name" class="col-form-label">แบรนด์สินค้า</label>
                             <select class="form-control" name="bdcode" id="bdcode" required>
                                 <?php 
@@ -80,7 +79,7 @@
                                     ?>
                             </select>
                         </div>
-                        <div class="form-group col-lg-3 col-6">
+                        <div class="form-group col-lg-3 col-12">
                             <label for="recipient-name" class="col-form-label">สีสินค้า</label>
                             <select class="form-control" name="clcode" id="clcode" required>
                                 <?php 
@@ -96,7 +95,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-lg-3 col-6">
+                        <div class="form-group col-lg-3 col-12">
                             <label for="recipient-name" class="col-form-label">สถานะการใช้งาน</label>
                             <select class="form-control" name="status" id="status" required>
                                 <option value="Y">เปิดใช้งาน</option>
