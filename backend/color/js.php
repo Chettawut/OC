@@ -14,12 +14,13 @@ $(function() {
                     status = 'เปิดใช้งาน'
                 else
                     status = 'ปิดใช้งาน'
-                    
+
                 $('#tableColor').append(
                     '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
                     .clcode[
                         count] + '" data-whatever="' + result.clcode[
-                        count] + '"><td>' + result.clname[count] + '</td><td>' + result.grname[count] + '</td><td>' +
+                        count] + '"><td>' + result.clname[count] + '</td><td>' + result.grname[
+                        count] + '</td><td>' +
                     status + '</td></tr>');
             }
 
@@ -65,16 +66,17 @@ $("#btnRefresh").click(function() {
 
 $("#frmAddColor").submit(function(e) {
     e.preventDefault();
-    
+
     $.ajax({
         type: "POST",
         url: "ajax/add_color.php",
         data: $("#frmAddColor").serialize() +
             "&id=" + '<?php echo $_SESSION['id'];?>',
-        success: function(result) {
+        success: async function(result) {
+
             if (result.status == 1) // Success
             {
-                alert(result.message);
+                await Swal.fire('สำเร็จ', result.message, 'success');
                 window.location.reload();
                 // console.log(result.message);
             }
@@ -91,11 +93,11 @@ $("#frmEditColor").submit(function() {
         url: "ajax/edit_color.php",
         data: $("#frmEditColor").serialize() +
             "&id=" + '<?php echo $_SESSION['id'];?>',
-        success: function(result) {
+        success: async function(result) {
 
             if (result.status == 1) // Success
             {
-                alert(result.message);
+                await Swal.fire('สำเร็จ', result.message, 'success');
                 window.location.reload();
                 // console.log(result.message);
             }

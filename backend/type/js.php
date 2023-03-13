@@ -19,7 +19,8 @@ $(function() {
                     '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
                     .typecode[
                         count] + '" data-whatever="' + result.typecode[
-                        count] + '"><td>' + result.typename[count] + '</td><td>' + result.grname[count] + '</td><td>' +
+                        count] + '"><td>' + result.typename[count] + '</td><td>' + result
+                    .grname[count] + '</td><td>' +
                     status + '</td></tr>');
             }
 
@@ -65,16 +66,17 @@ $("#btnRefresh").click(function() {
 //เพิ่มประเภท
 $("#frmAddType").submit(function(e) {
     e.preventDefault();
-    
+
     $.ajax({
         type: "POST",
         url: "ajax/add_type.php",
         data: $("#frmAddType").serialize() +
             "&id=" + '<?php echo $_SESSION['id'];?>',
-        success: function(result) {
+        success: async function(result) {
+
             if (result.status == 1) // Success
             {
-                alert(result.message);
+                await Swal.fire('สำเร็จ', result.message, 'success');
                 window.location.reload();
                 // console.log(result.message);
             }
@@ -89,13 +91,13 @@ $("#frmEditType").submit(function() {
     $.ajax({
         type: "POST",
         url: "ajax/edit_type.php",
-        data: $("#frmEditType").serialize()+
+        data: $("#frmEditType").serialize() +
             "&id=" + '<?php echo $_SESSION['id'];?>',
-        success: function(result) {
+        success: async function(result) {
 
             if (result.status == 1) // Success
             {
-                alert(result.message);
+                await Swal.fire('สำเร็จ', result.message, 'success');
                 window.location.reload();
                 // console.log(result.message);
             }

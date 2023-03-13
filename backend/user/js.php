@@ -9,14 +9,14 @@ $(function() {
             var type;
             for (count = 0; count < result.username.length; count++) {
 
-                if(result.type[count]=='01')
-                type = 'ธุรการ'
-                if(result.type[count]=='02')
-                type = 'Messenger'
-                if(result.type[count]=='03')
-                type = 'บัญชี'
-                if(result.type[count]=='99')
-                type = 'Admin'
+                if (result.type[count] == '01')
+                    type = 'ธุรการ'
+                if (result.type[count] == '02')
+                    type = 'Messenger'
+                if (result.type[count] == '03')
+                    type = 'บัญชี'
+                if (result.type[count] == '99')
+                    type = 'Admin'
 
                 $('#tableUser').append(
                     '<tr data-toggle="modal" data-target="#modelUserEdit" id="' + result
@@ -28,7 +28,8 @@ $(function() {
             }
 
             var table = $('#tableUser').DataTable({
-                "dom": '<"pull-right"f>rt<"bottom"p><"clear">',"ordering": false
+                "dom": '<"pull-right"f>rt<"bottom"p><"clear">',
+                "ordering": false
             });
 
             $(".dataTables_filter input[type='search']").attr({
@@ -38,7 +39,7 @@ $(function() {
 
         }
     });
-   
+
 
 })
 $('#modelUserEdit').on('show.bs.modal', function(event) {
@@ -51,14 +52,14 @@ $('#modelUserEdit').on('show.bs.modal', function(event) {
         url: "ajax/getsup_user.php",
         data: "idcode=" + recipient,
         success: function(result) {
-            modal.find('.modal-body #editusername').val(result.username);            
-            modal.find('.modal-body #editpassword').val(result.password);            
+            modal.find('.modal-body #editusername').val(result.username);
+            modal.find('.modal-body #editpassword').val(result.password);
             modal.find('.modal-body #editfirstname').val(result.firstname);
             modal.find('.modal-body #editlastname').val(result.lastname);
             modal.find('.modal-body #editstatus').val(result.status);
             modal.find('.modal-body #edittype').val(result.type);
             modal.find('.modal-body #editemail').val(result.email);
-           
+
         }
     });
 });
@@ -74,12 +75,15 @@ $("#frmAddUser").submit(function(e) {
         type: "POST",
         url: "ajax/add_user.php",
         data: $("#frmAddUser").serialize(),
-        success: function(result) {
+        success: async function(result) {
+
             if (result.status == 1) // Success
             {
-                alert(result.message);
+                await Swal.fire('สำเร็จ', result.message, 'success');
                 window.location.reload();
                 // console.log(result.message);
+            } else {
+                Swal.fire('เกิดข้อผิดพลาด', "รหัสซ้ำ", 'error');
             }
         }
     });
@@ -93,35 +97,16 @@ $("#btnEditUser").click(function() {
         type: "POST",
         url: "ajax/edit_user.php",
         data: $("#frmEditUser").serialize(),
-        success: function(result) {
-            
+        success: async function(result) {
+
             if (result.status == 1) // Success
             {
-                alert(result.message);
+                await Swal.fire('สำเร็จ', result.message, 'success');
                 window.location.reload();
                 // console.log(result.message);
-            }
+            } 
         }
     });
-
-});
-
-$("#btnDeleteUser").click(function() {
-
-$.ajax({
-    type: "POST",
-    url: "ajax/delete_user.php",
-    data: $("#frmEditUser").serialize(),
-    success: function(result) {
-        
-        if (result.status == 1) // Success
-        {
-            alert(result.message);
-            window.location.reload();
-            // console.log(result.message);
-        }
-    }
-});
 
 });
 </script>

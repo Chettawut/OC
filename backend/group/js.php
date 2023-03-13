@@ -65,16 +65,17 @@ $("#btnRefresh").click(function() {
 //เพิ่มประเภท
 $("#frmAddGroup").submit(function(e) {
     e.preventDefault();
-    
+
     $.ajax({
         type: "POST",
         url: "ajax/add_group.php",
         data: $("#frmAddGroup").serialize() +
             "&id=" + '<?php echo $_SESSION['id'];?>',
-        success: function(result) {
+        success: async function(result) {
+
             if (result.status == 1) // Success
             {
-                alert(result.message);
+                await Swal.fire('สำเร็จ', result.message, 'success');
                 window.location.reload();
                 // console.log(result.message);
             }
@@ -91,14 +92,14 @@ $("#frmEditGroup").submit(function() {
         url: "ajax/edit_group.php",
         data: $("#frmEditGroup").serialize() +
             "&id=" + '<?php echo $_SESSION['id'];?>',
-        success: function(result) {
+        success: async function(result) {
 
             if (result.status == 1) // Success
             {
-                alert(result.message);
+                await Swal.fire('สำเร็จ', result.message, 'success');
                 window.location.reload();
                 // console.log(result.message);
-            }
+            } 
         }
     });
 

@@ -79,7 +79,7 @@ $("#grcode").change(function() {
         data: "idcode=" + data,
         success: function(result) {
 
-            $("#typecode").append(new Option('--- กรุณาเลือก ---',''));
+            $("#typecode").append(new Option('--- กรุณาเลือก ---', ''));
             for (count = 0; count < result.typecode.length; count++) {
 
                 $("#typecode").append(new Option(result.typename[count], result.typecode[count]));
@@ -96,7 +96,7 @@ $("#grcode").change(function() {
         data: "idcode=" + data,
         success: function(result) {
 
-            $("#bdcode").append(new Option('--- กรุณาเลือก ---',''));
+            $("#bdcode").append(new Option('--- กรุณาเลือก ---', ''));
             for (count = 0; count < result.bdcode.length; count++) {
 
                 $("#bdcode").append(new Option(result.bdname[count], result.bdcode[count]));
@@ -113,7 +113,7 @@ $("#grcode").change(function() {
         data: "idcode=" + data,
         success: function(result) {
 
-            $("#clcode").append(new Option('--- กรุณาเลือก ---',''));
+            $("#clcode").append(new Option('--- กรุณาเลือก ---', ''));
             for (count = 0; count < result.clcode.length; count++) {
 
                 $("#clcode").append(new Option(result.clname[count], result.clcode[count]));
@@ -133,10 +133,11 @@ $("#add_grcode").change(function() {
         data: "idcode=" + data,
         success: function(result) {
 
-            $("#add_typecode").append(new Option('--- กรุณาเลือก ---',''));
+            $("#add_typecode").append(new Option('--- กรุณาเลือก ---', ''));
             for (count = 0; count < result.typecode.length; count++) {
 
-                $("#add_typecode").append(new Option(result.typename[count], result.typecode[count]));
+                $("#add_typecode").append(new Option(result.typename[count], result.typecode[
+                    count]));
             }
 
 
@@ -150,7 +151,7 @@ $("#add_grcode").change(function() {
         data: "idcode=" + data,
         success: function(result) {
 
-            $("#add_bdcode").append(new Option('--- กรุณาเลือก ---',''));
+            $("#add_bdcode").append(new Option('--- กรุณาเลือก ---', ''));
             for (count = 0; count < result.bdcode.length; count++) {
 
                 $("#add_bdcode").append(new Option(result.bdname[count], result.bdcode[count]));
@@ -167,7 +168,7 @@ $("#add_grcode").change(function() {
         data: "idcode=" + data,
         success: function(result) {
 
-            $("#add_clcode").append(new Option('--- กรุณาเลือก ---',''));
+            $("#add_clcode").append(new Option('--- กรุณาเลือก ---', ''));
             for (count = 0; count < result.clcode.length; count++) {
 
                 $("#add_clcode").append(new Option(result.clname[count], result.clcode[count]));
@@ -191,14 +192,15 @@ $("#frmAddStock").submit(function(e) {
         url: "ajax/add_product.php",
         data: $("#frmAddStock").serialize() +
             "&id=" + '<?php echo $_SESSION['id'];?>',
-        success: function(result) {
+        success: async function(result) {
+
             if (result.status == 1) // Success
             {
-                alert(result.message);
+                await Swal.fire('สำเร็จ', result.message, 'success');
                 window.location.reload();
                 // console.log(result.message);
             } else {
-                alert('รหัสซ้ำ');
+                Swal.fire('เกิดข้อผิดพลาด', "รหัสซ้ำ", 'error');
             }
         }
     });
@@ -216,11 +218,11 @@ $("#frmEditStock").submit(function(e) {
         url: "ajax/edit_product.php",
         data: $("#frmEditStock").serialize() +
             "&id=" + '<?php echo $_SESSION['id'];?>',
-        success: function(result) {
+        success: async function(result) {
 
             if (result.status == 1) // Success
             {
-                alert(result.message);
+                await Swal.fire('สำเร็จ', result.message, 'success');
                 window.location.reload();
                 // console.log(result.message);
             }

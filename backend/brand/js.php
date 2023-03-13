@@ -14,12 +14,13 @@ $(function() {
                     status = 'เปิดใช้งาน'
                 else
                     status = 'ปิดใช้งาน'
-                    
+
                 $('#tableBrand').append(
                     '<tr data-toggle="modal" data-target="#modal_edit" id="' + result
                     .bdcode[
                         count] + '" data-whatever="' + result.bdcode[
-                        count] + '"><td>' + result.bdname[count] + '</td><td>' + result.grname[count] + '</td><td>' +
+                        count] + '"><td>' + result.bdname[count] + '</td><td>' + result.grname[
+                        count] + '</td><td>' +
                     status + '</td></tr>');
             }
 
@@ -65,16 +66,17 @@ $("#btnRefresh").click(function() {
 
 $("#frmAddBrand").submit(function(e) {
     e.preventDefault();
-    
+
     $.ajax({
         type: "POST",
         url: "ajax/add_brand.php",
         data: $("#frmAddBrand").serialize() +
             "&id=" + '<?php echo $_SESSION['id'];?>',
-        success: function(result) {
+        success: async function(result) {
+
             if (result.status == 1) // Success
             {
-                alert(result.message);
+                await Swal.fire('สำเร็จ', result.message, 'success');
                 window.location.reload();
                 // console.log(result.message);
             }
@@ -91,11 +93,11 @@ $("#frmEditBrand").submit(function() {
         url: "ajax/edit_brand.php",
         data: $("#frmEditBrand").serialize() +
             "&id=" + '<?php echo $_SESSION['id'];?>',
-        success: function(result) {
+        success: async function(result) {
 
             if (result.status == 1) // Success
             {
-                alert(result.message);
+                await Swal.fire('สำเร็จ', result.message, 'success');
                 window.location.reload();
                 // console.log(result.message);
             }
