@@ -16,7 +16,7 @@ $(function() {
                         count] + '" data-whatever="' + result.stcode[
                         count] + '">.<td>' + result.stcode[count] + '</td><td>' +
                     result.stname1[count] + '</td><td style="text-align:left">' +
-                    result.typename[count] + '</td><td style="text-align:right">' +
+                    result.grname[count] + '</td><td style="text-align:right">' +
                     result.amount1[count] + '</td><td  style="text-align:center">' + result
                     .unit[count] + '</td></tr>');
             }
@@ -59,10 +59,10 @@ $('#modal_edit').on('show.bs.modal', function(event) {
             modal.find('.modal-body #stcode').val(result.stcode);
             modal.find('.modal-body #stname1').val(result.stname1);
             modal.find('.modal-body #unit').val(result.unit);
-            modal.find('.modal-body #typecode').val(result.typecode);
-            modal.find('.modal-body #bdcode').val(result.bdcode);
-            modal.find('.modal-body #clcode').val(result.clcode);
-            modal.find('.modal-body #status').val(result.status);
+            modal.find('.modal-body #grcode').val(result.grcode);
+            getAllGroup('edit',result.typecode,result.bdcode,result.clcode)            
+
+
 
         }
     });
@@ -71,6 +71,10 @@ $('#modal_edit').on('show.bs.modal', function(event) {
 
 $("#grcode").change(function() {
 
+    getAllGroup('change','','','')
+});
+
+function getAllGroup(type,typecode,bdcode,clcode) {
     let data = $("#grcode").val()
     $('#typecode')[0].options.length = 0;
     $.ajax({
@@ -85,6 +89,8 @@ $("#grcode").change(function() {
                 $("#typecode").append(new Option(result.typename[count], result.typecode[count]));
             }
 
+            if(type=='edit')
+            $("#typecode").val(typecode);
 
         }
     });
@@ -102,7 +108,8 @@ $("#grcode").change(function() {
                 $("#bdcode").append(new Option(result.bdname[count], result.bdcode[count]));
             }
 
-
+            if(type=='edit')
+            $("#bdcode").val(bdcode);
         }
     });
 
@@ -119,10 +126,11 @@ $("#grcode").change(function() {
                 $("#clcode").append(new Option(result.clname[count], result.clcode[count]));
             }
 
-
+            if(type=='edit')
+            $("#clcode").val(clcode);
         }
     });
-});
+}
 
 $("#add_grcode").change(function() {
     let data = $("#add_grcode").val()
