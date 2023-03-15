@@ -1,9 +1,9 @@
-<div class="modal fade" id="modal_add" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title" id="exampleModalLabel"><i class="fa fa-users" aria-hidden="true"></i>
-                    เพิ่มผู้ใช้ (Add User)</h2>
+<div class="modal fade bd-example-modal-xl" id="modal_add" tabindex="-1" role="dialog" aria-labelledby=""
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content w3-flat-turquoise">
+            <div class="modal-header bg-gradient-secondary">
+                <h5 class="modal-title"><i class="fa fa-users" aria-hidden="true"></i> เพิ่มผู้ใช้งาน</h5>
             </div>
             <form name="frmAddUser" id="frmAddUser" action="" method="post">
                 <div class="modal-body">
@@ -35,12 +35,9 @@
                         <div class="col-md-6">
                             <label class="col-form-label">ประเภท</label>
                             <select class="form-control" name="usertype" id="usertype">
-                                <option value="01">Store</option>
-                                <option value="02">Sales Leader</option>
-                                <option value="03">Accounting</option>
-                                <option value="04">Manager</option>
-                                <option value="05">Sales</option>
-                                <option value="99">Admin</option>
+                                <option value="ฝ่ายขาย">ฝ่ายขาย</option>
+                                <option value="ฝ่ายจัดการ">ฝ่ายจัดการ</option>
+                                <option value="Admin">Admin</option>
                             </select>
                         </div>
                         <div class="col-md-6">

@@ -9,14 +9,6 @@ $(function() {
             var type;
             for (count = 0; count < result.username.length; count++) {
 
-                if (result.type[count] == '01')
-                    type = 'ธุรการ'
-                if (result.type[count] == '02')
-                    type = 'Messenger'
-                if (result.type[count] == '03')
-                    type = 'บัญชี'
-                if (result.type[count] == '99')
-                    type = 'Admin'
 
                 $('#tableUser').append(
                     '<tr data-toggle="modal" data-target="#modelUserEdit" id="' + result
@@ -24,7 +16,7 @@ $(function() {
                         count] + '" data-whatever="' + result.username[
                         count] + '"><td>' + result.username[count] + '</td><td>' +
                     result.firstname[count] + '</td><td>' +
-                    result.lastname[count] + '</td><td>' + type + '</td></tr>');
+                    result.lastname[count] + '</td><td>' + result.type[count] + '</td></tr>');
             }
 
             var table = $('#tableUser').DataTable({
@@ -53,15 +45,39 @@ $('#modelUserEdit').on('show.bs.modal', function(event) {
         data: "idcode=" + recipient,
         success: function(result) {
             modal.find('.modal-body #editusername').val(result.username);
-            modal.find('.modal-body #editpassword').val(result.password);
+            modal.find('.modal-body #password').val(result.password);
             modal.find('.modal-body #editfirstname').val(result.firstname);
             modal.find('.modal-body #editlastname').val(result.lastname);
             modal.find('.modal-body #editstatus').val(result.status);
             modal.find('.modal-body #edittype').val(result.type);
             modal.find('.modal-body #editemail').val(result.email);
+            modal.find('.modal-body #code').val(result.code);
 
+            $('#perresetcode').val(result.code);
+            $('#resetfirstname').val(result.firstname);
+            $('#resetlastname').val(result.lastname);
         }
     });
+});
+
+$("#frmReset").submit(function(e) {
+    e.preventDefault();
+
+    $.ajax({
+        type: "POST",
+        url: "ajax/reset_password.php",
+        data: $("#frmReset").serialize(),
+        success: async function(result) {
+
+            if (result.status == 1) // Success
+            {
+                await Swal.fire('สำเร็จ', result.message, 'success');
+                window.location.reload();
+                // console.log(result.message);
+            }
+        }
+    });
+
 });
 
 $("#btnRefresh").click(function() {
@@ -82,8 +98,6 @@ $("#frmAddUser").submit(function(e) {
                 await Swal.fire('สำเร็จ', result.message, 'success');
                 window.location.reload();
                 // console.log(result.message);
-            } else {
-                Swal.fire('เกิดข้อผิดพลาด', "รหัสซ้ำ", 'error');
             }
         }
     });
@@ -91,7 +105,8 @@ $("#frmAddUser").submit(function(e) {
 
 });
 
-$("#btnEditUser").click(function() {
+$("#frmEditUser").submit(function(e) {
+    e.preventDefault();
 
     $.ajax({
         type: "POST",
@@ -104,7 +119,7 @@ $("#btnEditUser").click(function() {
                 await Swal.fire('สำเร็จ', result.message, 'success');
                 window.location.reload();
                 // console.log(result.message);
-            } 
+            }
         }
     });
 

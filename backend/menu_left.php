@@ -70,15 +70,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-header">อยู่ระหว่างการพัฒนา</li>
-                <li class="nav-item">
-                    <a href="<?php echo PATH; ?>/backend/customer" class="nav-link">
-                        <i class="nav-icon fas fa-address-book"></i>
-                        <p>
-                            ข้อมูลลูกค้า
-                        </p>
-                    </a>
-                </li>
+                <li class="nav-header">ระบบจัดการพนักงาน</li>
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/backend/user" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
@@ -87,6 +79,15 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-header">อยู่ระหว่างการพัฒนา</li>
+                <li class="nav-item">
+                    <a href="<?php echo PATH; ?>/backend/customer" class="nav-link">
+                        <i class="nav-icon fas fa-address-book"></i>
+                        <p>
+                            ข้อมูลลูกค้า
+                        </p>
+                    </a>
+                </li>                
                 <li class="nav-item">
                     <a href="<?php echo PATH; ?>/backend/supplier" class="nav-link">
                         <i class="nav-icon 	fas fa-user-tie"></i>

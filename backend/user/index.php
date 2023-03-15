@@ -1,10 +1,10 @@
 <?php
-session_start();
-if (!isset($_SESSION['loggedin'])) {
-    header('Location: ../../');
-    exit;
-}
-include_once('../conn.php');
+    session_start();
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: ../../');
+        exit;
+    }
+    include_once('../conn.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -98,6 +98,7 @@ include_once('../conn.php');
 
             <?php include_once('modal/modal_add.php');?>
             <?php include_once('modal/modal_edit.php');?>
+            <?php include_once('modal/modal_reset.php');?>
         </div>
 
         <?php 
